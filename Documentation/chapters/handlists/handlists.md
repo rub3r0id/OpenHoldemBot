@@ -4,7 +4,7 @@
 
 <figure>
 <img
-src="H:/Dokumente und Einstellungen/Development_2/Desktop/Documentation/Chapters/FormulaEditor/images/handlist_editor_matrix.JPG" />
+src="images/handlist_editor_matrix.jpg" />
 </figure>
 
 The OpenHoldem Hand List editor is displayed when you click on the “3x3

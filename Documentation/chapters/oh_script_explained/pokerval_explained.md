@@ -2,7 +2,7 @@
 
 OpenHoldem classifies and orders poker hands into a single 32bit value.
 
-<img src="../symbols/Images/PokerValue.png" alt="image" />
+<img src="../symbols/images/PokerValue.png" alt="image" />
 
 ## Bits 31-24 indicate the hand rank 
 
@@ -59,12 +59,12 @@ number space in correct order of game precedence, allowing two poker
 hands can be compared to see which is the better hand - higher values
 are better. The lowest possible value is 0 (no cards).
 
-![image](Images/pokerval_manualmode.JPG)
+![image](images/pokerval_manualmode.jpg)
 
 Now we either apply a binary operation or we feed the pokerval into
 MicroSofts calculator and then switch to binary mode:
 
-![image](Images/pokerval_calculator.JPG)
+![image](images/pokerval_calculator.jpg)
 
 Not that hard to interpret the result.
 

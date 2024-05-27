@@ -58,6 +58,6 @@ necessary information as command-line-parameters:
 | Target-amount (in dollars)                 |
 
 <figure>
-<img src="Images/pokerstars_poker_table.jpg" />
+<img src="images/pokerstars_poker_table.jpg" />
 <figcaption>Rebuy</figcaption>
 </figure>

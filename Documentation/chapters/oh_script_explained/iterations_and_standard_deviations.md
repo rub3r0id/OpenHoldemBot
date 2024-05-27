@@ -5,7 +5,7 @@ the standard deviation in prwin for the various numbers of iterations.
 Here are the results:
 
 <figure>
-<img src="Images/Nit_chart1.png" />
+<img src="images/nit_chart1.png" />
 </figure>
 
 Here is how to use the data in the above graphs:
@@ -22,7 +22,7 @@ Here is how to use the data in the above graphs:
     required iterations.
 
 <figure>
-<img src="Images/Nit_chart2.png" />
+<img src="images/nit_chart2.png" />
 </figure>
 
 The prwin values you obtain will be within 1 standard deviation 67% of

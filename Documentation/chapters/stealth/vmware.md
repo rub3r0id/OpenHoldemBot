@@ -31,7 +31,7 @@ computer as a separate computer with its own operating system, even
 though it is physically part of the real computer.
 
 <figure>
-<img src="images/vmware.JPG" />
+<img src="images/vmware.jpg" />
 </figure>
 
 ### Step 1 – Download VMware Server 

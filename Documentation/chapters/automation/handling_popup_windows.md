@@ -25,7 +25,7 @@ to autoplayer-buttons no button-label, because the sole meaning of this
 buttons is “click it away”.
 
 <figure>
-<img src="Images/painted_popup_titan.bmp" />
+<img src="images/painted_popup_titan.bmp" />
 </figure>
 
 ## The popup-blocker
@@ -35,7 +35,7 @@ popup-blocker. It will kill or minimize any visible window that is
 neither a connected poker-table nor an OpenHoldem window.
 
 <figure>
-<img src="Images/popup_blocker_options.png" />
+<img src="images/popup_blocker_options.png" />
 </figure>
 
 ## Keeping popups open
@@ -89,5 +89,5 @@ click the corresponding region.
     r$i860state          300 150 300 150   f0f0f0    0 C
 
 <figure>
-<img src="Images/popup_WPT_poker.png" />
+<img src="images/popup_wpt_poker.png" />
 </figure>

@@ -5,7 +5,7 @@ according to rank within a single value. Note that if an ace is present
 then both the 14 bit and the 1 bit will be set.
 
 <figure>
-<img src="../symbols/Images/Rankbits.gif" />
+<img src="images/Rankbits.gif" />
 <figcaption>Rank bits</figcaption>
 </figure>
 
@@ -28,7 +28,7 @@ then both the 14 bit and the 1 bit will be set.
 |     | Ace (low)  |             2 |
 |     | not used   |             1 |
 
-![image](../symbols/Images/rankbits_manualmode.JPG)
+![image](images/rankbits_manualmode.jpg)
 
 In this example rankbits is 20518 (decimal), which is 0b101000000100110
 (binary)

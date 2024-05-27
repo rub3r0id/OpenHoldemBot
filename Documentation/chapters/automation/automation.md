@@ -14,5 +14,5 @@ sleep while your poker bot plays for you. Nothing better than making
 money while you sleep!
 
 <figure>
-<img src="Images/OH_Zippy_2005.JPG" />
+<img src="images/oh_zippy_2005.jpg" />
 </figure>

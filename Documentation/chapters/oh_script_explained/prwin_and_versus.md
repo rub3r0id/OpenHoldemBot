@@ -129,7 +129,7 @@ model opponents handranges. It got developed by Matrix as part of his
 DLL and then contributed to OpenHoldem.
 
 <figure>
-<img src="Images/weighted_prwin.JPG" />
+<img src="images/weighted_prwin.jpg" />
 </figure>
 
 The hand-range of your opponent gets described by four parameters, each

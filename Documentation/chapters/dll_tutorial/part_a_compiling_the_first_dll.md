@@ -12,7 +12,7 @@ Install with custom settings; there is no need to change anything.
 
 Create a new project: File -\> New -\> Project.
 
-![image](images/Guide001.jpg)
+![image](images/guide001.jpg)
 
 ## Step 3
 
@@ -20,20 +20,20 @@ Choose Win32 Project Application, you can choose any name/directory you
 want for your project, but I suggest you stick with OH-DLL and
 C:\Projects for this tutorial
 
-![image](images/Guide002.jpg)
+![image](images/guide002.jpg)
 
 ## Step 4
 
 Don’t click the Finish button yet, but click on Next.
 
-![image](images/Guide003.jpg)
+![image](images/guide003.jpg)
 
 ## Step 5
 
 Select DLL and Empty project on the following screen and click the
 Finish button now.
 
-![image](images/Guide004.jpg)
+![image](images/guide004.jpg)
 
 ## Step 6
 
@@ -42,7 +42,7 @@ see on the screen it should be C:\Projects\OH-DLL\OH-DLL. The files are
 available at the Wiki:
 <http://www.maxinmontreal.com/wiki/index.php5?title=Image:OH-DLL.rar>.
 
-![image](images/Guide006.JPG)
+![image](images/guide006.jpg)
 
 ## Step 7
 
@@ -55,11 +55,11 @@ available at the Wiki:
 
 - Select the Header File folder and add the header file the same way
 
-![image](images/Guide005.JPG)
+![image](images/guide005.jpg)
 
-![image](images/Guide007.JPG)
+![image](images/guide007.jpg)
 
-![image](images/Guide008.JPG)
+![image](images/guide008.jpg)
 
 ## Step 8
 
@@ -71,29 +71,29 @@ available at the Wiki:
 
 - Add the project folder here, c:\projects\oh-dll\oh-dll
 
-![image](images/Guide009.JPG)
+![image](images/guide009.jpg)
 
-![image](images/Guide010.JPG)
+![image](images/guide010.jpg)
 
-![image](images/Guide011.JPG)
+![image](images/guide011.jpg)
 
 ## Step 9
 
 Select Precompiled Headers in the C/C++ tree and select Not Using
 Precompiled Headers.
 
-![image](images/Guide012.JPG)
+![image](images/guide012.jpg)
 
 ## Step 10
 
 In the Linker tree under General you can change the destination of the
 dll Output File if you need.
 
-![image](images/Guide013.JPG)
+![image](images/guide013.jpg)
 
 ## Step 11
 
 You are ready to compile the dll, click on Build -\> Build Solution or
 simply F7.
 
-![image](images/Guide014.JPG)
+![image](images/guide014.jpg)

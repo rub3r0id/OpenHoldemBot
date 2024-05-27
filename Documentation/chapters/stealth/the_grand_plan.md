@@ -35,7 +35,7 @@ In our opinion the way to success looks like that
   Montreal and you will be welcome to ask any question you like.
 
 <figure>
-<img src="images/OH_setup_1_cropped.jpg" />
+<img src="images/oh_setup_1_cropped.jpg" />
 </figure>
 
 ## FAQ

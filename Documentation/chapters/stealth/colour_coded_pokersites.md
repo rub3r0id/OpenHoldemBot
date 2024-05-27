@@ -37,7 +37,7 @@
     these bots are fewer and more sophisticated.  
 
     <figure>
-    <img src="images/egor_site_X.JPG" />
+    <img src="images/egor_site_x.jpg" />
     </figure>
 
 8.  Merge: supported by Shanky in the past until a mass-ban out of the

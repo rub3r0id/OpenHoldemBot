@@ -131,7 +131,7 @@ lines. As you can see I added two new variables, ismyturn and betround.
 
 ### Setting up the \*.ohf file
 
-![image](images/Guide031.JPG)
+![image](images/guide031.jpg)
 
 This is how a \*.ohf file might look for this dll, ofourse I am always
 open to suggestions if someone else has any to improve it.
