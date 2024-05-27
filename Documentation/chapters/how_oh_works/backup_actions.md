@@ -22,7 +22,7 @@ but could not get executed.
 ## OpenPPL and Backup-Actions
 
 <figure>
-<img src="images/OpenPPL_backup_actions.JPG" />
+<img src="images/openppl_backup_actions.jpg" />
 </figure>
 
 OpenPPL is different: there is no way to control each possible action

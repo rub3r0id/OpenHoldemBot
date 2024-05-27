@@ -55,7 +55,7 @@ below shows a FullTilt mini-table, where the regions for player-names
 and balances partially overlap.
 
 <figure>
-<img src="Images/balance_stability.jpg" />
+<img src="images/balance_stability.jpg" />
 </figure>
 
 There are several counter-meassures that will help you to deal with such
@@ -107,7 +107,7 @@ formula-editor.
      = myturnbits
 
 <figure>
-<img src="Images/debug_tab.JPG" />
+<img src="images/debug_tab.jpg" />
 </figure>
 
 If you want to investigate in detail how OpenHoldem did choose a
@@ -448,13 +448,13 @@ mouse-clicks and keyboard-events. To fix this just modify the
 permissions like below.
 
 <figure>
-<img src="Images/UAC_bring_settings.JPG" />
+<img src="images/uac_bring_settings.jpg" />
 </figure>
 
 If all else fails run OpenHoldem as administrator.
 
-![image](Images/UAC_OH_settings_01.png)
+![image](images/uac_oh_settings_01.png)
 
 <figure>
-<img src="Images/UAC_OH_settings_02.png" />
+<img src="images/uac_oh_settings_02.png" />
 </figure>

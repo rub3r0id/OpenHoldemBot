@@ -50,11 +50,11 @@ installed you simply execute the batch-script “Update_tablemaps.bat” and
 the latest tablemaps will be downloaded into your scraper-directory.
 
 <figure>
-<img src="Images/update_tablemap_script.png" />
+<img src="images/update_tablemap_script.png" />
 </figure>
 
 <figure>
-<img src="Images/official_real_world_casinos.png" />
+<img src="images/official_real_world_casinos.png" />
 </figure>
 
 Please don’t get fooled by this screenshot. The initial
@@ -109,7 +109,7 @@ gametype then chances are good that you will find a map in our forum at
 <http://www.maxinmontreal.com/>
 
 <figure>
-<img src="Images/maxinmontreal_tablemap_forums.png" />
+<img src="images/maxinmontreal_tablemap_forums.png" />
 </figure>
 
 Our users have posted several hundred tablemaps in the forum. Most

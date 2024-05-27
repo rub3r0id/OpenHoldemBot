@@ -38,7 +38,7 @@ Properties–\>Appearance–\>Effects. Disable smoothed fonts in this
 dialog.
 
 <figure>
-<img src="Images/config_Smoothing_Disabled.png" />
+<img src="images/config_Smoothing_Disabled.png" />
 <p>Font Smoothing disabled / Font Smoothing enabled from Notepad</p>
 </figure>
 
@@ -57,7 +57,7 @@ theme that they were designed for. Most OpenHoldem botters use Windows
 2000 or the Windows XP Classic theme.
 
 <figure>
-<img src="Images/config_Classic_VS_Normal.png" />
+<img src="images/config_Classic_VS_Normal.png" />
 </figure>
 
 ## Windows XP and ClearType 

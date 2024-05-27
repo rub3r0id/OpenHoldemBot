@@ -28,7 +28,7 @@ is always true, so if all questions were answered with 0 or false, your
 hand-will be check-folded.
 
 <figure>
-<img src="images/autoplayer_functions_formula_editor.JPG" />
+<img src="images/autoplayer_functions_formula_editor.jpg" />
 </figure>
 
 OH-script uses *C(++)*-style mathematical expressions, i.e. the same
@@ -85,7 +85,7 @@ the assignment operator and function parameters to control the recursion
 depth.
 
 <figure>
-<img src="images/run_time_error.JPG" />
+<img src="images/run_time_error.jpg" />
 </figure>
 
 ## Default Bot

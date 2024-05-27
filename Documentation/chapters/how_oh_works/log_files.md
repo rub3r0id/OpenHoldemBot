@@ -60,7 +60,7 @@ their return-values to a final result. This leads to a simplified
 call-tree:
 
 <figure>
-<img src="images/log_simple_call_tree.JPG" />
+<img src="images/log_simple_call_tree.jpg" />
 </figure>
 
 Each function that is one level indented got called by the next function
@@ -79,7 +79,7 @@ f\$PoorHeroIsPotCommitted uses Balance and Pot. Then the
 autoplayer-trace could look like this:
 
 <figure>
-<img src="images/log_detailed_call_tree.JPG" />
+<img src="images/log_detailed_call_tree.jpg" />
 </figure>
 
 So the implementation and the evaluation of each symbol use some other

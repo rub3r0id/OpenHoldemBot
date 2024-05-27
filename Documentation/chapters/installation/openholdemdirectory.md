@@ -1,7 +1,7 @@
 # OpenHoldem Directory
 
 <figure>
-<img src="Images/Installation.JPG" />
+<img src="images/Installation.jpg" />
 </figure>
 
 In the OpenHoldem directoryyou will find the following files and

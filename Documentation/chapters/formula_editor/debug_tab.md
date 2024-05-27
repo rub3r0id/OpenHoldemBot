@@ -7,7 +7,7 @@ table. Using it is quite simple: one expression per line, each one after
 an equality-sign.
 
 <figure>
-<img src="images/debug_tab.JPG" />
+<img src="images/debug_tab.jpg" />
 </figure>
 
 After you have entered the expressions you are interested in just click
@@ -17,5 +17,5 @@ useful features for developing and debugging your OpenHoldem formula
 set.
 
 <figure>
-<img src="images/debug_tab_auto.JPG" />
+<img src="images/debug_tab_auto.jpg" />
 </figure>
