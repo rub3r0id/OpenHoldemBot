@@ -139,9 +139,9 @@
 #define VERSION_TEXT				"14.0.2.0"  // change version number in OpenHoldem.rc also, when needed
 
 // PokerEval
-#include "poker_defs.h"
-#include "pokereval_export.h"
-#include "evx_defs.h"
+#include "PokerEval/include/poker_defs.h"
+#include "PokerEval/include/pokereval_export.h"
+#include "PokerEval/include/evx_defs.h"
 
 // Assertions
 #include <assert.h>
@@ -150,14 +150,14 @@
 #include "CValidator.h"
 #include "FloatingPoint_Comparisions.h"
 #include "NumericalFunctions.h"
-#include "..\DLLs\Debug_DLL\debug.h"
-#include "..\DLLs\Files_DLL\files.h"
-#include "..\DLLs\Globals_DLL\globals.h"
-#include "..\DLLs\Preferences_DLL\Preferences.h"
-#include "..\DLLs\StringFunctions_DLL\string_functions.h"
-#include "..\Shared\CCritSec\CCritSec.h"
-#include "..\Shared\MagicNumbers\MagicNumbers.h"
-#include "..\StructsDefines\structs_defines.h"
+#include "Debugger/debugger.h"
+#include "Files/files.h"
+#include "Globals/globals.h"
+#include "Preferences/Preferences.h"
+#include "StringFunctions/string_functions.h"
+#include "CCritSec/CCritSec.h"
+#include "MagicNumbers/MagicNumbers.h"
+#include "StructsDefines/structs_defines.h"
 
 // To avoid some race-conditions
 #define WAIT_FOR_CONDITION(condition) { while (!(condition)) { Sleep(250); } }

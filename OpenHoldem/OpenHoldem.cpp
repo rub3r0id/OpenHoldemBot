@@ -17,8 +17,8 @@
 #include "OpenHoldem.h"
 #include <psapi.h>
 #include <windows.h>
-#include "..\CTablemap\CTablemap.h"
-#include "..\CTablemap\CTableMapAccess.h"
+#include "CTablemap/CTablemap.h"
+#include "CTablemap/CTableMapAccess.h"
 #include "CAutoConnector.h"
 #include "CFormulaParser.h"
 #include "CHeartbeatThread.h"
@@ -28,7 +28,7 @@
 #include "CSessionCounter.h"
 #include "DialogFormulaScintilla.h"
 #include "MainFrm.h"
-#include "..\DLLs\WindowFunctions_DLL\window_functions.h"
+#include "WindowFunctions/window_functions.h"
 #include "OpenHoldemDoc.h"
 #include "OpenHoldemView.h"
 #include "Singletons.h"
@@ -66,7 +66,6 @@ COpenHoldemApp::~COpenHoldemApp() {
 
 // The one and only COpenHoldemApp object
 COpenHoldemApp theApp;
-
 
 // COpenHoldemApp initialization
 BOOL COpenHoldemApp::InitInstance() {
@@ -110,7 +109,7 @@ BOOL COpenHoldemApp::InitInstance() {
 	// This will also help win7/8 compatibility 
 	// those line are automatically inserted if you create a new MFC project with VS2010
 	// http://stackoverflow.com/questions/6633515/mfc-app-assert-fail-at-crecentfilelistadd-on-command-line-fileopen
-  // http://www.maxinmontreal.com/forums/viewtopic.php?f=110&t=17579&start=150#p122418
+	// http://www.maxinmontreal.com/forums/viewtopic.php?f=110&t=17579&start=150#p122418
 	if (!AfxOleInit())
 		return FALSE;
 	AfxEnableControlContainer();
@@ -133,7 +132,7 @@ BOOL COpenHoldemApp::InitInstance() {
     if (file_size > max_file_size) {
       delete_log();
     }*/
-	start_log(p_sessioncounter->session_id(), false); //!!!!!
+	start_log(p_sessioncounter->session_id(), false, LogFilePath(p_sessioncounter->session_id()).GetString()); //!!!!!
   // ...then re-Load the preferences immediately after creation 
   // of the log-file again, as We might want to log the preferences too,
   // which was not yet possible some lines above.

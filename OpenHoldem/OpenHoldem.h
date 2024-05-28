@@ -23,8 +23,8 @@
 
 #include "resource.h"	   // main symbols
 
-#include "..\..\Reference Mouse DLL\mousedll.h"
-#include "..\..\Reference Keyboard DLL\keyboarddll.h"
+#include "Mouse/mouse.h"
+#include "Keyboard/keyboard.h"
 
 // COpenHoldemApp:
 // See OpenHoldem.cpp for the implementation of this class

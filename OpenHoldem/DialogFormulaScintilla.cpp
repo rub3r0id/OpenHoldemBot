@@ -37,13 +37,13 @@
 #include "DialogNew.h"
 #include "DialogRename.h"
 #include "MainFrm.h"
-#include "..\DLLs\WindowFunctions_DLL\window_functions.h"
+#include "WindowFunctions/window_functions.h"
 #include "OpenHoldem.h"
 #include "OpenHoldemDoc.h"
-#include "..\PokerTracker_Query_Definitions\pokertracker_query_definitions.h"
-#include "../scintilla/include/SciLexer.h"
-#include "../scintilla/include/Scintilla.h"
-#include "WinMgr.h"
+#include "PokerTracker/pokertracker_query_definitions.h"
+#include "Scintilla/include/SciLexer.h"
+#include "Scintilla/include/Scintilla.h"
+#include "CWinMgr/WinMgr.h"
 
 
 // CDlgFormulaScintilla dialog

@@ -36,4 +36,9 @@ scintilla/bin
 \.vs/OpenHoldem/v14/.suo
 \.vs/
 
+Debug/
+Release/
 
+.vs/
+_int/
+_out/

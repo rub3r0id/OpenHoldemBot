@@ -24,7 +24,7 @@
 
 #include "CSelftestParserEvaluator.h"
 
-#include "..\DLLs\WindowFunctions_DLL\window_functions.h"
+#include "WindowFunctions/window_functions.h"
 
 CFunctionCollection *p_function_collection = NULL;
 

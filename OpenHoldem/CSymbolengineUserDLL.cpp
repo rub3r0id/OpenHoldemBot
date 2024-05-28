@@ -24,7 +24,7 @@
 #include "CScraper.h"
 #include "CSymbolengineVersus.h"
 #include "CTableState.h"
-#include "..\DLLs\User_DLL\user.h"
+#include "User/user.h"
 
 CSymbolEngineUserDLL *p_symbol_engine_formula_loading = NULL;
 

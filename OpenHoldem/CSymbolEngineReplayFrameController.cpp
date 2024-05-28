@@ -16,7 +16,6 @@
 #include "stdafx.h"
 #include "CSymbolEngineReplayFrameController.h"
 
-#include <assert.h>
 #include "CAutoPlayer.h"
 #include "CEngineContainer.h"
 #include "CFunctionCollection.h"

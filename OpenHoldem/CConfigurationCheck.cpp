@@ -15,7 +15,7 @@
 
 #include "CConfigurationCheck.h"
 
-#include "..\DLLs\WindowFunctions_DLL\window_functions.h"
+#include "WindowFunctions/window_functions.h"
 
 
 CConfigurationCheck *p_configurationcheck = 0;

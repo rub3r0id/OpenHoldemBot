@@ -16,9 +16,9 @@
 #include "CAutoConnector.h"
 
 #include <afxwin.h>
-#include "..\CTablemap\CTablemap.h"
-#include "..\CTablemap\CTablemapAccess.h"
-#include "..\CTransform\CTransform.h"
+#include "CTablemap/CTablemap.h"
+#include "CTablemap/CTablemapAccess.h"
+#include "CTransform/CTransform.h"
 #include "CAutoplayer.h"
 #include "CCasinoInterface.h"
 #include "CEngineContainer.h"
@@ -37,7 +37,7 @@
 #include "DialogScraperOutput.h"
 
 #include "MainFrm.h"
-#include "..\DLLs\WindowFunctions_DLL\window_functions.h"
+#include "WindowFunctions/window_functions.h"
 #include "OpenHoldem.h"
 
 CAutoConnector *p_autoconnector = NULL;

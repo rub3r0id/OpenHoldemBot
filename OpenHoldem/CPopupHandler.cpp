@@ -17,7 +17,7 @@
 
 #include "CSessionCounter.h"
 #include "CSharedMem.h"
-#include "..\DLLs\WindowFunctions_DLL\window_functions.h"
+#include "WindowFunctions/window_functions.h"
 
 // Only for testing
 #undef MESSAGEBOX_BEFORE_MINIMIZING
