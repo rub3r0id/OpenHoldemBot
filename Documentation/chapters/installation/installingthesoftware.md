@@ -23,7 +23,7 @@ your machine:
     done, your directory should look something like below.
 
     <figure>
-    <img src="images/Installation.jpg" />
+    <img src="images/installation.jpg" />
     </figure>
 
 4.  OpenHoldem got created with MicroSoft Visual Studio 2015 Community
