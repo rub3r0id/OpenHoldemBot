@@ -24,17 +24,13 @@ OpenHoldem provides memory_symbols to store values in variables in your
 formulas as a replacement for left-hand-side-expressions. Storing a
 value looks like me_st_SYMBOLNAME_VALUE. For example you can store:
 
-numbers,  
-e.g. me_st_Pi_3_141
+<b>numbers</b>, e.g. me_st_Pi_3_141
 
-symbols,  
-e.g. me_st_MyChair_userchair
+<b>symbols</b>, e.g. me_st_MyChair_userchair
 
-functions,  
-e.g. me_st_CallFunction_f\$call
+<b>functions</b>, e.g. me_st_CallFunction_f\$call
 
-memory  
-symbols, e.g. me_st_OldValue_me_re_CurrentValue
+<b>memory</b> symbols, e.g. me_st_OldValue_me_re_CurrentValue
 
 me_st\_ will store a new value, where_as me_re\_ will lookup a
 previously stored value and me_inc\_ will increment a value that serves

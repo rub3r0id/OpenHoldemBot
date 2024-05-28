@@ -34,55 +34,12 @@ Scraping cards works in a similar way: It requires:
 
 In practice it looks like this:
 
-| ![image](images_seated_active_playing/sap_1.jpg) | Not seated |     |
-|:-------------------------------------------------|:-----------|:----|
-| Rest does not matter                             |            |     |
-
-  
-![image](images_seated_active_playing/sap_2.jpg) & Seated, but sitting
-out &
-
-|                   |
-|:------------------|
-| pXseated == true  |
-| pXactive == false |
-
-  
-![image](images_seated_active_playing/sap_3.jpg) & Seated and active,
-but not playing &
-
-|                           |
-|:--------------------------|
-| pXseated == true          |
-| pXactive == true          |
-| pXcardback == false       |
-| pYcardfaceYnocard == true |
-
-  
-![image](images_seated_active_playing/sap_4.jpg) & Seated, active and
-playing (villain) &
-
-|                    |
-|:-------------------|
-| pXseated == true   |
-| pXactive == true   |
-| pXcardback == true |
-
-  
-![image](images_seated_active_playing/sap_5.jpg) &
-
-|                                                     |
-|:----------------------------------------------------|
-| Seated, active and playing                          |
-| (usually hero, at some casinos villain at showdown) |
-
-&
-
-|                            |
-|:---------------------------|
-| pXseated == true           |
-| pXactive == true           |
-| pXcardback == false        |
-| pXcardfaceYnocard == false |
+Image|Situation|Parameters
+-|-|-
+![image](images_seated_active_playing/sap_1.jpg) | Not seated | <li>pXseated == false <li>Rest does not matter
+![image](images_seated_active_playing/sap_2.jpg) | Seated, but sitting out | <li>pXseated == true <li>pXactive == false
+![image](images_seated_active_playing/sap_3.jpg) | Seated and active, but not playing | <li>pXseated == true <li>pXactive == true <li>pXcardback == false <li>pYcardfaceYnocard == true
+![image](images_seated_active_playing/sap_4.jpg) | Seated, active and playing (villain) | <li>pXseated == true  <li>pXactive == true <li>pXcardback == true
+![image](images_seated_active_playing/sap_5.jpg) | Seated, active and playing <br> (usually hero, at some casinos villain at showdown) | <li>pXseated == true <li>pXactive == true <li>pXcardback == false <li>pXcardfaceYnocard == false
 
   

@@ -16,7 +16,7 @@
 * Introduction
 	* [Thank you to all volunteers!](chapters/thanks/thanks.md)
 	* [What is openholdem](chapters/introduction/whatisopenholdem.md)
-* [What openholdem is not](chapters/introduction/whatopenholdemisnot.md)
+	* [What openholdem is not](chapters/introduction/whatopenholdemisnot.md)
 	* [Winholdem heritage](chapters/introduction/winholdemheritage.md)
 	* [A (few) word(s) of caution](chapters/introduction/caution.md)
 	* [Openholdem references](chapters/introduction/openholdemreferences.md)
@@ -96,7 +96,7 @@
 	* [Interface-buttons explained](chapters/scraping_in_practice/interface_buttons_explained.md)
 	* [Interpreting titletext](chapters/scraping_in_practice/interpreting_titletext.md)
 * Expert tricks
-	* [Scraping &quot;10&quot; as t](chapters/expert_tricks/scraping_10_as_ten.md)
+	* [Scraping &quot;10&quot; as T](chapters/expert_tricks/scraping_10_as_ten.md)
 	* [Scraping cents and dollars](chapters/scraping_in_practice/scraping_dollars_and_cents.md)
 	* [Scraping non-standard titles](chapters/expert_tricks/scraping_non_standard_titles.md)
 	* [Defining the game-type](chapters/scraping_in_practice/setting_the_game_type_to_nolimit.md)
@@ -124,7 +124,7 @@
 * OH-script explained
 	* [Prwin and versus](chapters/oh_script_explained/prwin_and_versus.md)
 	* [Iterations and standard deviations for prwin](chapters/oh_script_explained/iterations_and_standard_deviations.md)
-	* [Icm - the independent chip model](chapters/oh_script_explained/icm_explained.md)
+	* [ICM - the independent chip model](chapters/oh_script_explained/icm_explained.md)
 	* [Pokerval explained](chapters/oh_script_explained/pokerval_explained.md)
 	* [Memory symbols](chapters/memory_symbols/memory_symbols.md)
 	* [Rankbits](chapters/oh_script_explained/rankbits_explained.md)
