@@ -12,7 +12,7 @@ text transform is this entire sequence of ASCII characters.
 
 ## Manipulating font records using OpenScrape
 
-![image](images/OS_editor_create_font.JPG)
+![image](images/os_editor_create_font.jpg)
 
 The “Create Font” button on the Table Map Editor window is used to
 create new font records. This button is only available if a Text
@@ -42,7 +42,7 @@ Assuming that some of the pixels in the selected region represent
 unknown font characters, then the following window will appear when the
 “Create Font” button is clicked:
 
-![image](images/OS_editor_add_font_record.JPG)
+![image](images/os_editor_add_font_record.jpg)
 
 On this window, a list of the individual font characters that OpenScrape
 thinks it has found is displayed in the list on the left side. As we

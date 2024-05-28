@@ -7,7 +7,7 @@ connected to a PokerStars table. But as a beginner you might prefer the
 ManualMode application to familiarize youself with OpenHoldem.
 
 <figure>
-<img src="images/main_GUI.JPG" />
+<img src="images/main_gui.jpg" />
 </figure>
 
 The center information box contains various other information, including

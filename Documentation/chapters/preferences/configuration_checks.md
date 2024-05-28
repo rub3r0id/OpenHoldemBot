@@ -6,7 +6,7 @@ mis-configurations. Some of them (like minimum colour-depth) will always
 be executed, other can be turned off, if you don’t use certain features.
 
 <figure>
-<img src="Images/preferences_configuration_check.JPG" />
+<img src="images/preferences_configuration_check.jpg" />
 </figure>
 
 - *Check Keyboard Settings:* this option will, check for an english

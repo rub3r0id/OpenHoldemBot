@@ -14,7 +14,7 @@ your screen in such a way that there is no overlap – OpenScrape needs a
 clear view of the poker table window to do its job.
 
 <figure>
-<img src="images/OS_ArrangedWindows.png" />
+<img src="images/os_arrangedwindows.png" />
 </figure>
 
 Connect OpenScrape to the casino table by clicking on the Green Circle
@@ -25,7 +25,7 @@ the one from the list that matches your casino table, and select OK.
 You will learn more about ManualMode later in this document, but for
 now, just consider ManualMode to be a simulated, offline poker table).
 
-![image](images/OS_WindowSelection.png)
+![image](images/os_windowselection.png)
 
 A static image of the poker table window will be displayed in
 OpenScrape’s main window. Once OpenScrape has the poker table’s image
@@ -40,7 +40,7 @@ back again. Additionally, if you have OpenScrape connected to an
 OHReplay window, it automatically moves OHReplay to the next saved frame
 prior to grabbing the image.
 
-![image](images/OS_Connected.png)
+![image](images/os_connected.png)
 
 Once we have the poker table image in OpenScrape, it is time to start
 building our Table Map, and providing the parameters that the OpenHoldem

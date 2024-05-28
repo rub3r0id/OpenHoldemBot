@@ -171,7 +171,7 @@ fold.</td>
 </table>
 
 <figure>
-<img src="Images/debugtab_limits.JPG" />
+<img src="images/debugtab_limits.jpg" />
 </figure>
 
 ## Tournament Info
@@ -274,7 +274,7 @@ dealposition-symbols will consider the following players as dealt
 | betpositionrais | the bet position of the raising player (1-10) |
 
 <figure>
-<img src="Images/debug_tab_positions.JPG" />
+<img src="images/debug_tab_positions.jpg" />
 </figure>
 
 ## Probabilities 
@@ -711,7 +711,7 @@ including the blinds</td>
 | flagbits | flag button bits 19-0 - 1=pressed 0=notpressed              |
 
 <figure>
-<img src="../gui/images/flags_toolbar.JPG" />
+<img src="images/flags_toolbar.jpg" />
 </figure>
 
 The flags toolbar is used to set internal OpenHoldem flag symbols
@@ -1224,7 +1224,7 @@ can use this to track which part of your formula is to blame for the
 action taken by OpenHoldem.
 
 <figure>
-<img src="Images/log$_symbol.JPG" />
+<img src="images/log$_symbol.jpg" />
 </figure>
 
 <div class="rem*">
@@ -1266,7 +1266,7 @@ The symbol msgbox\$TEXT will evaluate to 0. An example:
     WHEN Others RETURN (Call + msgbox$WOOHOO_NPreflop_Bworks_D) FORCE
 
 <figure>
-<img src="Images/msgbox.JPG" />
+<img src="images/msgbox.jpg" />
 </figure>
 
 ## ICM calculator

@@ -12,7 +12,7 @@ debugging of your Table Map and bot logic while offline.
 ## Familiarizing yourself with OHReplay
 
 <figure>
-<img src="Images/OHReplay_with_file_dialog.JPG" />
+<img src="images/ohreplay_with_file_dialog.jpg" />
 </figure>
 
 The initial window displayed by OHReplay when it starts up contains all

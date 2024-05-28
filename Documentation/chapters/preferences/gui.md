@@ -3,7 +3,7 @@
 GUI preferences control how the OpenHoldem GUI operates on startup.
 
 <figure>
-<img src="Images/preferences_GUI.JPG" />
+<img src="images/preferences_gui.jpg" />
 </figure>
 
 - *Start minimized:* This option will cause OpenHoldem to start in

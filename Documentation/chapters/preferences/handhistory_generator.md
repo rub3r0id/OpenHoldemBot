@@ -7,5 +7,5 @@ and PokerTracker support. If enabled the hand histories can be found in
 the directory “OpenHoldem/Hand_Histories/\<SESSION_ID\>/”.
 
 <figure>
-<img src="Images/preferences_handhistory.JPG" />
+<img src="images/preferences_handhistory.jpg" />
 </figure>

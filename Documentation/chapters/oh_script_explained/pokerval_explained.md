@@ -2,7 +2,7 @@
 
 OpenHoldem classifies and orders poker hands into a single 32bit value.
 
-<img src="../symbols/images/PokerValue.png" alt="image" />
+<img src="images/pokervalue.png" alt="image" />
 
 ## Bits 31-24 indicate the hand rank 
 

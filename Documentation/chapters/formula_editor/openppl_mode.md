@@ -11,7 +11,7 @@ hidden and a subtree with the four main OpenPPL functions will be shown
 instead.
 
 <figure>
-<img src="images/openppl_mode.JPG" />
+<img src="images/openppl_mode.jpg" />
 </figure>
 
 If your formula-editor is in OH-script mode then just create a new
@@ -19,5 +19,5 @@ user-defined function, call it “f\$preflop”, start editing it, apply
 your changes and reopen the editor.
 
 <figure>
-<img src="images/creating_f_preflop.JPG" />
+<img src="images/creating_f_preflop.jpg" />
 </figure>

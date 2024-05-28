@@ -4,7 +4,7 @@ Rebuy preferences control when and how OpenHoldem executes the external
 rebuy-script. See the section about Automation for more information.
 
 <figure>
-<img src="Images/preferences_rebuy.jpg" />
+<img src="images/preferences_rebuy.jpg" />
 </figure>
 
 - *Change in handnumber:* This option will cause OpenHoldem to wait at

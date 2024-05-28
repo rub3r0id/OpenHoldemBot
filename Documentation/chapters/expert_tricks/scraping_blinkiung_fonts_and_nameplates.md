@@ -6,7 +6,7 @@ scrape the data the normal way just with one colour and one radius
 (colour tolerance).
 
 <figure>
-<img src="images/blinking_01.JPG" />
+<img src="images/blinking_01.jpg" />
 </figure>
 
 But as usual OpenHoldem provides a solution for blinking fonts: a second
@@ -16,7 +16,7 @@ vice versa. In practice it looks like that: the normal name-plate (here
 for player 6) gets recognized perfectly by p6name.
 
 <figure>
-<img src="images/blinking_p6_working_02.JPG" />
+<img src="images/blinking_p6_working_02.jpg" />
 </figure>
 
 But when the name is highlighted with inverted colours the region p6name
@@ -25,13 +25,13 @@ fails to recognize the name. Please notice the inverted pixel separation
 different) and the missing result.
 
 <figure>
-<img src="images/blinking_p6_not_working_03.JPG" />
+<img src="images/blinking_p6_not_working_03.jpg" />
 </figure>
 
 But then u6name works
 
 <figure>
-<img src="images/blinking_u6_working_04.JPG" />
+<img src="images/blinking_u6_working_04.jpg" />
 </figure>
 
 And together both regions will always produce a good result.

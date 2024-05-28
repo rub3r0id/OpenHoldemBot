@@ -15,7 +15,7 @@ situations, some of which are very rare online (think Straight Flushes).
 ## Familiarizing yourself with ManualMode
 
 <figure>
-<img src="Images/ManualMode.PNG" />
+<img src="images/manualmode.png" />
 <figcaption>ManualMode</figcaption>
 </figure>
 
@@ -91,13 +91,13 @@ If you right-clicking at the “white box” ManualMode will show a dialog
 where you can set up the gametype to be simulated.
 
 <figure>
-<img src="Images/manualmode_gametype_setup.JPG" />
+<img src="images/manualmode_gametype_setup.jpg" />
 </figure>
 
 ## Macros 
 
 <figure>
-<img src="Images/manualmode_macro.JPG" />
+<img src="images/manualmode_macro.jpg" />
 </figure>
 
 A macro string is a series of characters executed one at a time, left to

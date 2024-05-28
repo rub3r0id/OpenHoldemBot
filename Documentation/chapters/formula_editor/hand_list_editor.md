@@ -9,7 +9,7 @@ Choose a name, press “OK” and the list has been created; empty for the
 moment.
 
 <figure>
-<img src="images/handlist_editor.JPG" />
+<img src="images/handlist_editor.jpg" />
 </figure>
 
 To edit your newly created list select it in the tree-view and click the
@@ -18,5 +18,5 @@ choose the hands in the lists. Pairs are at the main diagonal, Suited
 hands above and offsuited hands below.
 
 <figure>
-<img src="images/handlist_editor_matrix.JPG" />
+<img src="images/handlist_editor_matrix.jpg" />
 </figure>

@@ -20,7 +20,7 @@ Hash Records are created from specific Image records, so in order to
 create a Hash record, you must first have collected the associated Image
 record (see section {4.9}).
 
-![image](images/OS_editor_create_hash.JPG)
+![image](images/os_editor_create_hash.jpg)
 
 The “Create Hash” buttons on the Table Map Editor window are used to
 create new Hash records. Button “0” creates Hash records in the Hash0
@@ -45,7 +45,7 @@ To create a new Hash records:
 The following window will then appear to confirm the addition of the new
 Hash record:
 
-![image](images/OS_editor_hash_conformation.JPG)
+![image](images/os_editor_hash_conformation.jpg)
 
 When you add a new Hash record with the “Create Hash” buttons,
 OpenScrape will calculate the hash value for you and add it to the

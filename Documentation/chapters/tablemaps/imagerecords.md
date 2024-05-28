@@ -22,7 +22,7 @@ orders of magnitude faster.
 
 ## Manipulating image records using OpenScrape
 
-![image](images/OS_editor_create_image_record.JPG)
+![image](images/os_editor_create_image_record.jpg)
 
 The “Create Image” button on the Table Map Editor window is used to
 create new Image records. This button is only available if a region
@@ -31,7 +31,7 @@ record has previously been selected.
 When the “Create Image” button is clicked, the following window will
 appear:
 
-![image](images/OS_editor_new_image.JPG)
+![image](images/os_editor_new_image.jpg)
 
 The only required piece of information on this window is the name of the
 Image record, however, the name you choose is crucially important, as

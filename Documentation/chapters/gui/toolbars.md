@@ -3,7 +3,7 @@
 ## OpenHoldem Main Toolbar
 
 <figure>
-<img src="images/toolbar.JPG" />
+<img src="images/toolbar.jpg" />
 </figure>
 
 From left to right, the buttons on the Main toolbar are:
@@ -24,7 +24,7 @@ From left to right, the buttons on the Main toolbar are:
   before you take it to the real-money tables.  
 
   <figure>
-  <img src="images/validator.JPG" />
+  <img src="images/validator.jpg" />
   </figure>
 
 - Tag log-file. This will create an entry in the log that makes it easy
@@ -46,7 +46,7 @@ From left to right, the buttons on the Main toolbar are:
 ## OpenHoldem Flags Toolbar
 
 <figure>
-<img src="images/flags_toolbar.JPG" />
+<img src="images/flags_toolbar.jpg" />
 </figure>
 
 The Flags toolbar is used to set internal OpenHoldem flag symbols

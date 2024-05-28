@@ -48,7 +48,7 @@ to be used.
 The majority of the right side of the Table Map Editor window is used to
 manipulate the parameters of the region record.
 
-![image](images/OS_Editor_region_rectangle.JPG)
+![image](images/os_editor_region_rectangle.jpg)
 
 Starting at the top, there is a rectangle group box. This group box
 allows you to define the extents (left, right, top, bottom) of the
@@ -61,7 +61,7 @@ rectangle on the poker table.
 
 To use the rectangle drawing tool, click once on this control:
 
-![image](images/OS_editor_draw_tool.JPG)
+![image](images/os_editor_draw_tool.jpg)
 
 ...then move your mouse cursor to the Main OpenScrape window where the
 image of the poker table is displayed. The mouse cursor will change to
@@ -76,7 +76,7 @@ of the Table Map Editor window. The Table Map Editor window can be
 enlarged, if needed, to show the entire region. Use the Zoom Level
 control to adjust the zoom level in this display.
 
-![image](images/OS_editort_nudge_buttons.JPG)
+![image](images/os_editort_nudge_buttons.jpg)
 
 To the right of the rectangle group box is the nudge group box. These
 controls allow you to adjust the size and position of the region
@@ -104,7 +104,7 @@ dropping the region to its new location.
 
 - Control + Shift + Arrow keys – Resize the region by 5 pixels
 
-![image](images/OS_editor_region_record_parameters.JPG)
+![image](images/os_editor_region_record_parameters.jpg)
 
 The next set of controls allows you to set the remainder of the
 parameters on a region record. Here you can set the type of transform,
@@ -122,7 +122,7 @@ As a helpful reference, the “Avg Color” fields are populated with the
 calculated average color of all pixels in the region. This is useful for
 finding RGB color cube centers and for text transform separations.
 
-![image](images/OS_editor_result.JPG)
+![image](images/os_editor_result.jpg)
 
 This field provides an instant preview of the results of combining the
 current pixels in the region with the current transform for that region.
@@ -133,7 +133,7 @@ defined RGB color cube. If this is a Hash transform, the value of the
 matching Hash record is displayed. If this is an Image transform, the
 value of the matching Image record is displayed.
 
-![image](images/OS_editor_pixel_separation.JPG)
+![image](images/os_editor_pixel_separation.jpg)
 
 If your region is defined to have a Text transform, then the Pixel
 Separation window will be populated with a preview of this separation.

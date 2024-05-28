@@ -12,7 +12,7 @@ discussion forum is the best place to keep on top of this
 (<a href="http://www.maxinmontreal.com/forums/viewtopic.php?f=189 "
 class="uri">http://www.maxinmontreal.com/forums/viewtopic.php?f=189 </a>).
 
-![image](Images/preferences_validator.JPG)
+![image](images/preferences_validator.jpg)
 
 - *Enable Validator*: This preference determines when the Validator is
   engaged to do its work, either never (completely off), when it is my
@@ -45,5 +45,5 @@ bitch!
 
 <figure>
 <img
-src="H:/Dokumente und Einstellungen/Development_2/Desktop/Documentation/Chapters/gui/images/validator.JPG" />
+src="images/validator.jpg" />
 </figure>

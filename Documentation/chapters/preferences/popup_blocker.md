@@ -11,7 +11,7 @@ that is not
 - a poker-table that fits to a tablemap in the scraper folder
 
 <figure>
-<img src="Images/preferences_popup_blocker.JPG" />
+<img src="images/preferences_popup_blocker.jpg" />
 </figure>
 
 The popup blocker has just three options:

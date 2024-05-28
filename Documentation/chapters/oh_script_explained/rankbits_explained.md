@@ -5,7 +5,7 @@ according to rank within a single value. Note that if an ace is present
 then both the 14 bit and the 1 bit will be set.
 
 <figure>
-<img src="images/Rankbits.gif" />
+<img src="images/rankbits.gif" />
 <figcaption>Rank bits</figcaption>
 </figure>
 

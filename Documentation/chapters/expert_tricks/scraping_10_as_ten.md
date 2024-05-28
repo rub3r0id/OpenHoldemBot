@@ -29,7 +29,7 @@ natural way:
 And that’s it!
 
 <figure>
-<img src="images/scraping_10_as_ten_rank_only.JPG" />
+<img src="images/scraping_10_as_ten_rank_only.jpg" />
 </figure>
 
 But what about the topic of this chapter? What is so special about
@@ -44,5 +44,5 @@ as “T”. In the picture below we do the same work, but there we scrape
 rank and suit together as “p4cardface0” and the result is “Th”.
 
 <figure>
-<img src="images/scraping_10_as_ten.JPG" />
+<img src="images/scraping_10_as_ten.jpg" />
 </figure>

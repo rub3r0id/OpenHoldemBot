@@ -3,7 +3,7 @@
 ## File
 
 <figure>
-<img src="images/menu_file.JPG" />
+<img src="images/menu_file.jpg" />
 </figure>
 
 The File menu is pretty self-explaining. It contains some standard
@@ -15,7 +15,7 @@ will quit OpenHoldem
 ## Edit
 
 <figure>
-<img src="images/menu_edit.JPG" />
+<img src="images/menu_edit.jpg" />
 </figure>
 
 The edit-menu contains the following items:
@@ -42,7 +42,7 @@ The edit-menu contains the following items:
   inspect the result of all scraped regions
 
   <figure>
-  <img src="images/dialog_scraper_output.JPG" />
+  <img src="images/dialog_scraper_output.jpg" />
   </figure>
 
 - *Shoot Replay-Frame*: this final menu-item will shoot a replay-frame,
@@ -55,7 +55,7 @@ The edit-menu contains the following items:
 ## Problem Solver
 
 <figure>
-<img src="images/menu_problem_solver.JPG" />
+<img src="images/menu_problem_solver.jpg" />
 </figure>
 
 The Problem-Solver is a tool meant to help newbies to get OpenHoldem
@@ -67,7 +67,7 @@ menu without being hidden in a sub-menu.
 ## Help
 
 <figure>
-<img src="images/menu_help.JPG" />
+<img src="images/menu_help.jpg" />
 </figure>
 
 Finally the Help menu contains five menu items:
@@ -90,5 +90,5 @@ Finally the Help menu contains five menu items:
 - *About this Program*:
 
   <figure>
-  <img src="images/dialog_about.JPG" />
+  <img src="images/dialog_about.jpg" />
   </figure>

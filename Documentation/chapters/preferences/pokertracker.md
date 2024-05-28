@@ -5,7 +5,7 @@ Tracker database. See the {PokerTracker} section for more information on
 using Poker Tracker with OpenHoldem.
 
 <figure>
-<img src="Images/preferences_pokertracker.JPG" />
+<img src="images/preferences_pokertracker.jpg" />
 </figure>
 
 - *Host Name / IP Address, Port, Username, Password, DB Name*: These are

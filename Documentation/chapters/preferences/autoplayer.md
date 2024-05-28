@@ -4,7 +4,7 @@ Autoplayer preferences control how the OpenHoldem Autoplayer functions.
 See the {The Autoplayer} section for more information.
 
 <figure>
-<img src="Images/preferences_autoplayer.JPG" />
+<img src="images/preferences_autoplayer.jpg" />
 </figure>
 
 - *Stable frames required*: This parameter specifies how many additional

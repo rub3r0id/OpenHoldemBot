@@ -10,7 +10,7 @@ toolbar, and has “TableMap” as its title.
 ## File Menu 
 
 <figure>
-<img src="images/Menu_File.JPG" />
+<img src="images/menu_file.jpg" />
 </figure>
 
 The File menu contains the standard Windows options to open and save
@@ -19,7 +19,7 @@ Table Map files.
 ## Edit Menu
 
 <figure>
-<img src="images/Menu_Edit.JPG" />
+<img src="images/menu_edit.jpg" />
 </figure>
 
 The Edit menu contains the standard Windows options, plus two options
@@ -43,7 +43,7 @@ specific to OpenScrape:
 ## View Menu 
 
 <figure>
-<img src="images/Menu_View.JPG" />
+<img src="images/menu_view.jpg" />
 </figure>
 
 The View menu has following OpenScrape options:
@@ -71,7 +71,7 @@ The View menu has following OpenScrape options:
 
 ## Main Toolbar 
 
-![image](images/OS_Toolbar.JPG)
+![image](images/os_toolbar.jpg)
 
 The toolbar on the main window performs the following actions, from left
 to right:
@@ -113,7 +113,7 @@ Table Map: Buttons/fields. The Table Map Editor window has a plethora of
 information on it, and various fields and controls will become enabled
 or disabled, depending on the type of map record selected.
 
-![image](images/OS_Editor.JPG)
+![image](images/os_editor.jpg)
 
 On the top left of the window are three buttons, New/Delete/Edit, that
 allow you to add new records to the map, remove records from the map, or

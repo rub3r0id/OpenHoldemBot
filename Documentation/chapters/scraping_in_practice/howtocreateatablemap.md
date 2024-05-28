@@ -147,14 +147,14 @@ Here I opened the file in a text editor (notepad++ from
 You can see the two regions that we created for the first player.
 
 <figure>
-<img src="images_how_to_create_a_map/11_p0cardfaceY_in_editor.jpg" />
+<img src="images_how_to_create_a_map/11_p0cardfacey_in_editor.jpg" />
 </figure>
 
 Now I copy and paste the region’s of the first player several times...
 
 <figure>
 <img
-src="images_how_to_create_a_map/12_p0cardfaceY_in_editor_semi_cloned.jpg" />
+src="images_how_to_create_a_map/12_p0cardfacey_in_editor_semi_cloned.jpg" />
 </figure>
 
 ...and rename the cloned ones, so that we get cardfaces for all 9
@@ -162,7 +162,7 @@ players (p0...p8).
 
 <figure>
 <img
-src="images_how_to_create_a_map/13_p0cardfaceY_in_editor_cloned.jpg" />
+src="images_how_to_create_a_map/13_p0cardfacey_in_editor_cloned.jpg" />
 </figure>
 
 (On a side-note: cloning regions became more easy in the mean-time. Just
@@ -220,7 +220,7 @@ Checking alignment again. Pay close attention; if one region is
 misaligned, all data collected from this region will be wrong.
 
 <figure>
-<img src="images_how_to_create_a_map/19_OS_with_aligned_cards.jpg" />
+<img src="images_how_to_create_a_map/19_os_with_aligned_cards.jpg" />
 </figure>
 
 Now we start collecting cards
@@ -266,7 +266,7 @@ Creating hashes – step 2
 Now OpenScrape already recognizes the card 8s
 
 <figure>
-<img src="images_how_to_create_a_map/23_OS_recognizing_8s.jpg" />
+<img src="images_how_to_create_a_map/23_os_recognizing_8s.jpg" />
 </figure>
 
 As the next step we would like to create the regions pXbet, but the
@@ -303,7 +303,7 @@ Then I open the TM in a text editor and pre-create the new regions, just
 like I did with the cards before.
 
 <figure>
-<img src="images_how_to_create_a_map/27_chips_precreated_in_TM.jpg" />
+<img src="images_how_to_create_a_map/27_chips_precreated_in_tm.jpg" />
 </figure>
 
 The best place to align the pXchipXX regions is in the blinds, because
@@ -381,7 +381,7 @@ Here you can see the pXchipYZ aligned in OpenScrape.
 
 <figure>
 <img
-src="images_how_to_create_a_map/35_chips_aligned_at_white_OS.jpg" />
+src="images_how_to_create_a_map/35_chips_aligned_at_white_os.jpg" />
 </figure>
 
 Now we have a nearly working tablemap. It recognizes cards and bets.

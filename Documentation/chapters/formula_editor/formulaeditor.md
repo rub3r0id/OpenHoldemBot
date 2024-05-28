@@ -16,5 +16,5 @@ right:
   handlist
 
 <figure>
-<img src="images/formula_editor.JPG" />
+<img src="images/formula_editor.jpg" />
 </figure>

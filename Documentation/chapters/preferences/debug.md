@@ -8,5 +8,5 @@ new feature. Therefore we won’t go into detail here. Just have a look
 and imagine what happens beyond the surface.
 
 <figure>
-<img src="Images/preferences_debug.JPG" />
+<img src="images/preferences_debug.jpg" />
 </figure>

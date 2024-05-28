@@ -4,7 +4,7 @@ The holdem scraper has the concept of interface regions, that can be
 clicked by the autoplayer to interact with the casino. Such an interface
 region consists of three components:
 
-![image](images_interface_buttons/iX_action_buttons.JPG)
+![image](images_interface_buttons/ix_action_buttons.jpg)
 
 | iXbutton | Location of the button, where X is the buttons number (0..9) and the location is a rectangle, specified by the coordinates of the top-left and bottom-right corner. |
 |:---|:---|
@@ -78,7 +78,7 @@ work: examples: callllll, check01, Raiseto:\$10 etc.
 
 # Sitin/Sitout particular behaviour 
 
-![image](images_interface_buttons/sitout_fulltilt.JPG)
+![image](images_interface_buttons/sitout_fulltilt.jpg)
 
 Traditionally since the early days of FullTilt some special
 interface-buttons are check-boxes: sitin / sitout / prefold / autopost
@@ -92,7 +92,7 @@ and these buttons will be seen as clickable if their state is “off”.
 
 # The spam buttons 
 
-![image](images_interface_buttons/i86_spam_button.JPG)
+![image](images_interface_buttons/i86_spam_button.jpg)
 
 OpenHoldem provides some special buttons for spam handling i86 and if
 you need more i860...i869.. For spam we intend all the popups that can
@@ -118,7 +118,7 @@ to manage them.
 
 # The betsize interface 
 
-![image](images_interface_buttons/i3edit.JPG)
+![image](images_interface_buttons/i3edit.jpg)
 
 If we play NoLimit or PotLimit games we need a way to enter betsizes.
 This is called “betsizing” (formerly “swagging”, WinHoldems abbreviation

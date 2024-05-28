@@ -7,7 +7,7 @@ how to interpret these titles as explained in the chapter “Interpreting
 Titletext”.
 
 <figure>
-<img src="images/title_scraping_old_888_standard.JPG" />
+<img src="images/title_scraping_old_888_standard.jpg" />
 </figure>
 
 However there are a some (very few) casinos that don’t provide such a
@@ -29,7 +29,7 @@ some nice graphics that looks like a title, and the “real” title is
 frozen at the first blind-level.
 
 <figure>
-<img src="images/title_scraping_william_hill.JPG" />
+<img src="images/title_scraping_william_hill.jpg" />
 </figure>
 
 Luckily there is a solution: if OpenHoldem can’t interpret the title
@@ -60,7 +60,7 @@ table. To do so we need:
 That’s all to make it work.
 
 <figure>
-<img src="images/c0limits.JPG" />
+<img src="images/c0limits.jpg" />
 </figure>
 
 Finally in some very rare cases it could be that that positions and the

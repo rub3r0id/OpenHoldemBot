@@ -4,7 +4,7 @@ The multiplexer-engine is a module that enables you to access lots of
 symbols in a poker-logical way.
 
 <figure>
-<img src="Images/multiplexer.jpg" />
+<img src="images/multiplexer.jpg" />
 </figure>
 
 ## Historic background

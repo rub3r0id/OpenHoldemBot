@@ -34,7 +34,7 @@ are only relevant if the record name is one of the ttlimits types. If a
 ttlimits record type is selected, these fields will be enabled,
 otherwise they will be grayed out.
 
-![image](images/OS_editor_symbol_records.JPG)
+![image](images/os_editor_symbol_records.jpg)
 
 These three fields allow you to test the parsing of the window’s title
 bar text with the parse string that is specified in the “String” field,

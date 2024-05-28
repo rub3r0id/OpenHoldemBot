@@ -7,5 +7,5 @@ function text. No equality-sign here. Just enter your code and play
 around until you are satisfied with the results.
 
 <figure>
-<img src="images/f_test.JPG" />
+<img src="images/f_test.jpg" />
 </figure>

@@ -14,7 +14,7 @@ following sections will discuss how to use each of these record types to
 create your map.
 
 <figure>
-<img src="images/introduction_openscrape_connected_to_manualmode.JPG" />
+<img src="images/introduction_openscrape_connected_to_manualmode.jpg" />
 </figure>
 
     .osdb2

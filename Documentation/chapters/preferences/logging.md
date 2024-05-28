@@ -4,7 +4,7 @@ Logging preferences control what information OpenHoldem will
 periodically write to various log files.
 
 <figure>
-<img src="Images/preferences_logging.JPG" />
+<img src="images/preferences_logging.jpg" />
 </figure>
 
 - *Basic Info*:This setting will cause OpenHoldem to log very basic

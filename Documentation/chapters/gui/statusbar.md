@@ -3,7 +3,7 @@
 At the very bottom of the OpenHoldem GUI you will find the statusbar.
 
 <figure>
-<img src="images/statusbar.JPG" />
+<img src="images/statusbar.jpg" />
 </figure>
 
 From left to right, the fields on the Status Bar are:

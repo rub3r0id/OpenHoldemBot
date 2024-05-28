@@ -5,7 +5,7 @@ for offline development and debugging use. See the {Replay Frames}
 section for more information on using Replay Frames.
 
 <figure>
-<img src="Images/preferences_replay_frames.JPG" />
+<img src="images/preferences_replay_frames.jpg" />
 </figure>
 
 - *Never*: If this setting is checked, OpenHoldem will not record any

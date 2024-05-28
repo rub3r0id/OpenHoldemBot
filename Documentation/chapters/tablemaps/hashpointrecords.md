@@ -29,7 +29,7 @@ Table Map Editor window, and click the “New” button. A window will be
 displayed that allows you to enter the hash point group and the X and Y
 parameters:
 
-![image](images/OS_editor_new_hashpoint.JPG)
+![image](images/os_editor_new_hashpoint.jpg)
 
 2.Somewhat less intuitively, but ultimately easier to use, is to select
 the “Hash Points” category in the record tree display on the Table Map
@@ -37,7 +37,7 @@ Editor window, and click the “Edit” button. A window will be displayed
 that allows you to select the hash point group, a sample image, and then
 interactively define the Hash Points for that group:
 
-![image](images/os_editor_graphical_hashpoint_editor_empty.JPG)
+![image](images/os_editor_graphical_hashpoint_editor_empty.jpg)
 
 When you select a Hash Point group from the “Hash Type” control, the
 “Hash Point List” box will populate with all the Hash Points currently
@@ -49,7 +49,7 @@ need to have Image records created first for this to work), the right
 side of the window will display that image and overlay the Hash Points
 for the selected group, like so:
 
-![image](images/os_editor_graphical_hashpoint_editor.JPG)
+![image](images/os_editor_graphical_hashpoint_editor.jpg)
 
 The zoom level of the sample image can be adjusted with the “Zoom Level”
 control. Adding Hash Points can be done interactively by left-clicking

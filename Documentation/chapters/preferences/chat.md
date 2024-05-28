@@ -6,7 +6,7 @@ The chat feature will generate a message if the f\$chat-function returns
 non-zero and the safety-delays are passed.
 
 <figure>
-<img src="Images/preferences_chat.JPG" />
+<img src="images/preferences_chat.jpg" />
 </figure>
 
 - *Minimum delay*: This is the minimum amount of time that Chat will

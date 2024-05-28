@@ -4,7 +4,7 @@ Table Positioner preferences control if and how OpenHoldem arranges
 poker-tables at the screen
 
 <figure>
-<img src="Images/preferences_table_positioner.JPG" />
+<img src="images/preferences_table_positioner.jpg" />
 </figure>
 
 - *Tiled*: this option will align all tables nicely without much

@@ -5,7 +5,7 @@ and are primarily useful in setting up a highly stealthed environment.
 See the {Stealth} chapter for more information.
 
 <figure>
-<img src="Images/preferences_stealth.JPG" />
+<img src="images/preferences_stealth.jpg" />
 </figure>
 
 - *Simple Main Window Title*: By default, OpenHoldem will include all

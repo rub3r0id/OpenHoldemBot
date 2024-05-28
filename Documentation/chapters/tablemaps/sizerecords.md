@@ -8,7 +8,7 @@ they provide the ability to specify the accepted sizes for the casino
 table that the scraper engine will recognize.
 
 <figure>
-<img src="images/OH_clientsize.JPG" />
+<img src="images/oh_clientsize.jpg" />
 </figure>
 
 Upon connection OpenHoldem will look for poker table windows that are
@@ -44,7 +44,7 @@ option is at the bottom of this menu and is preceeded by “Current Size:
 into a clientsize record.
 
 <figure>
-<img src="images/OS_edit_clientsize.JPG" />
+<img src="images/os_edit_clientsize.jpg" />
 </figure>
 
 ## Technical reference 

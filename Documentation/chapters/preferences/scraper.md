@@ -5,7 +5,7 @@ functions. At the moment there is only one preference available here.
 See the {Creating a Table Map} section for more information.
 
 <figure>
-<img src="Images/preferences_scraper.JPG" />
+<img src="images/preferences_scraper.jpg" />
 </figure>
 
 - *Scrape Delay*: This parameter specifies the amount of time (in

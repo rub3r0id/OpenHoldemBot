@@ -23,7 +23,7 @@ benefits:
 Therefore OpenHoldem provides a way to interpret the titletext:
 
 <figure>
-<img src="images_interpreting_title_text/title_text.JPG" />
+<img src="images_interpreting_title_text/title_text.jpg" />
 </figure>
 
 In the example above

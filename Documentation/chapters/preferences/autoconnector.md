@@ -4,7 +4,7 @@ Autoconnector preferences control how the OpenHoldem Autoconnector
 functions. See the {The Automation} section for more information.
 
 <figure>
-<img src="Images/preferences_autoconnector.JPG" />
+<img src="images/preferences_autoconnector.jpg" />
 </figure>
 
 - *Auto-Connect*
