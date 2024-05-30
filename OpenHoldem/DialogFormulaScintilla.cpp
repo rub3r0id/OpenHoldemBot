@@ -412,7 +412,6 @@ void CDlgFormulaScintilla::RemoveSingleItemGroups()
 {
 	HTREEITEM hUDFChildItem = m_FormulaTree.GetChildItem(hUDFItem);
 	HTREEITEM hNextLevelItem = NULL, hNextItem = NULL;
-	CString fnName = 0;
 
 	while (hUDFChildItem != NULL)
 	{

@@ -18,6 +18,7 @@
 #include "CAutoplayer.h"
 #include "CEngineContainer.h"
 #include "MyCtoolbar.h"
+#include "resource.h"
 
 
 CFlagsToolbar *p_flags_toolbar = NULL;

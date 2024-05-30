@@ -15,15 +15,10 @@
 //
 #include "stdafx.h"
 #include "OpenHoldem.h"
-#include <psapi.h>
-#include <windows.h>
 #include "CTablemap/CTablemap.h"
-#include "CTablemap/CTableMapAccess.h"
-#include "CAutoConnector.h"
 #include "CFormulaParser.h"
 #include "CHeartbeatThread.h"
 #include "CIteratorThread.h"
-#include "COpenHoldemHopperCommunication.h"
 #include "COpenHoldemTitle.h"
 #include "CSessionCounter.h"
 #include "DialogFormulaScintilla.h"

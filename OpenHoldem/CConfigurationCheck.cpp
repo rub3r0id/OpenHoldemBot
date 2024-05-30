@@ -126,12 +126,12 @@ CString CConfigurationCheck::GetValue(CString mhive, int type, CString registry_
 				}
 
 			default :
-				return NULL;
+				return "0";
 		}
 	}
 	else
 	{
-		return NULL;
+		return "0";
 	}
 }
 

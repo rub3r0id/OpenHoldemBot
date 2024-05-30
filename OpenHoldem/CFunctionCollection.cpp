@@ -242,7 +242,7 @@ CString CFunctionCollection::GetSimilarNameWithDifferentCases(CString function_n
     p_nextObject = GetNext();
   }
   // Nothing found
-  return NULL;
+  return "";
 }
 
 COHScriptObject *CFunctionCollection::LookUp(CString name) {

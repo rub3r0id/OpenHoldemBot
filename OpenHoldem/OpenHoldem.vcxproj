@@ -13,7 +13,7 @@
   <PropertyGroup Label="Globals">
     <ProjectName>OpenHoldem</ProjectName>
     <ProjectGuid>{4B4F8898-50C6-4F07-8771-B140482DBA69}</ProjectGuid>
-    <RootNamespace>pokbot</RootNamespace>
+    <RootNamespace>OpenHoldem</RootNamespace>
     <Keyword>MFCProj</Keyword>
     <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
   </PropertyGroup>
@@ -21,7 +21,6 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseOfMfc>Dynamic</UseOfMfc>
-    <CharacterSet>MultiByte</CharacterSet>
     <WholeProgramOptimization>false</WholeProgramOptimization>
     <PlatformToolset>v140_xp</PlatformToolset>
   </PropertyGroup>
@@ -42,25 +41,19 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup>
-    <_ProjectFileVersion>10.0.30319.1</_ProjectFileVersion>
     <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</LinkIncremental>
     <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkIncremental>
     <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</GenerateManifest>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <CodeAnalysisRuleSet>C:\Program Files (x86)\Microsoft Visual Studio 14.0\Team Tools\Static Analysis Tools\Rule Sets\NativeRecommendedRules.ruleset</CodeAnalysisRuleSet>
     <RunCodeAnalysis>false</RunCodeAnalysis>
     <OutDir>$(SolutionDir)_out\$(Platform)\$(Configuration)\</OutDir>
     <IntDir>$(SolutionDir)_int\$(Platform)\$(Configuration)\$(TargetName)\</IntDir>
     <GenerateManifest>true</GenerateManifest>
-    <IncludePath>C:\Program Files %28x86%29\Visual Leak Detector\include;$(IncludePath)</IncludePath>
-    <LibraryPath>C:\Program Files %28x86%29\Visual Leak Detector\lib\Win32;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <OutDir>$(SolutionDir)_out\$(Platform)\$(Configuration)\</OutDir>
     <IntDir>$(SolutionDir)_int\$(Platform)\$(Configuration)\$(TargetName)\</IntDir>
-    <IncludePath>C:\Program Files %28x86%29\Visual Leak Detector\include;$(IncludePath)</IncludePath>
-    <LibraryPath>C:\Program Files %28x86%29\Visual Leak Detector\lib\Win32;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <Midl>
@@ -70,7 +63,7 @@
     <ClCompile>
       <Optimization>Disabled</Optimization>
       <AdditionalIncludeDirectories>$(SolutionDir);$(SolutionDir)Common;$(SolutionDir)Libraries\External;$(SolutionDir)Libraries\Internal;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>WIN32;OEMRESOURCE;_DEBUG;_CRT_SECURE_NO_DEPRECATE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;OEMRESOURCE;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <MinimalRebuild>false</MinimalRebuild>
       <ExceptionHandling>Sync</ExceptionHandling>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
@@ -98,8 +91,6 @@
       <SubSystem>Windows</SubSystem>
       <StackReserveSize>8388608</StackReserveSize>
       <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <DelayLoadDLLs>
-      </DelayLoadDLLs>
       <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
     </Link>
     <Manifest>
@@ -120,7 +111,7 @@
       <EnableFiberSafeOptimizations>true</EnableFiberSafeOptimizations>
       <WholeProgramOptimization>true</WholeProgramOptimization>
       <AdditionalIncludeDirectories>$(SolutionDir);$(SolutionDir)Common;$(SolutionDir)Libraries\External;$(SolutionDir)Libraries\Internal;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>WIN32;NDEBUG;OEMRESOURCE;_CRT_SECURE_NO_DEPRECATE;USER_EXPORTS;MOUSE_EXPORTS;FILES_DLL_EXPORTS;KEYBOARD_EXPORTS;DEBUG_DLL_EXPORTS;GLOBALS_DLL_EXPORTS;VALIDATOR_DLL_EXPORTS;PREFERENCES_DLL_EXPORTS;POKERTRACKER_DLL_EXPORTS;STRING_FUNCTIONS_EXPORTS;WINDOW_FUNCTIONS_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;OEMRESOURCE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <MinimalRebuild>false</MinimalRebuild>
       <ExceptionHandling>Sync</ExceptionHandling>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
@@ -135,13 +126,15 @@
       <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Link>
-      <AdditionalDependencies>imm32.lib;psapi.lib;$(OutDir)libpq.lib;secur32.lib;$(OutDir)Preferences.lib;$(OutDir)Globals.lib;$(OutDir)SciLexer.lib;$(OutDir)PokerEval.lib;$(OutDir)PokerTracker.lib;$(OutDir)User.lib;$(OutDir)StringFunctions.lib;$(OutDir)WindowFunctions.lib;$(OutDir)Debugger.lib;$(OutDir)GameStateValidation.lib;$(OutDir)Files.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>imm32.lib;psapi.lib;secur32.lib;$(OutDir)libpq.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
       <GenerateDebugInformation>false</GenerateDebugInformation>
       <SubSystem>Windows</SubSystem>
       <StackReserveSize>8388608</StackReserveSize>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <OptimizeReferences>true</OptimizeReferences>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <LinkTimeCodeGeneration>UseLinkTimeCodeGeneration</LinkTimeCodeGeneration>
     </Link>
     <Manifest>
       <EnableDpiAwareness>false</EnableDpiAwareness>

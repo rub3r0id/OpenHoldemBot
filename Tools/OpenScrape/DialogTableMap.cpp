@@ -3540,7 +3540,7 @@ void CDlgTableMap::RemoveSingleItemGroups()
 
 			if (hNextLevelItem != NULL && m_TableMapTree.GetNextSiblingItem(hNextLevelItem) == NULL) 
 			{
-				MoveTreeItem(hNextLevelItem, hRegionNode, NULL, false);
+				MoveTreeItem(hNextLevelItem, hRegionNode, "", false);
 				m_TableMapTree.DeleteItem(hRegionChildItem);
 			}
 
@@ -3647,7 +3647,7 @@ void CDlgTableMap::UngroupRegions()
 			while (hGroupedRegionItem) 
 			{
 				hNextItem = m_TableMapTree.GetNextSiblingItem(hGroupedRegionItem);
-				MoveTreeItem(hGroupedRegionItem, hRegionNode, NULL, false);
+				MoveTreeItem(hGroupedRegionItem, hRegionNode, "", false);
 				hGroupedRegionItem = hNextItem;
 			}
 

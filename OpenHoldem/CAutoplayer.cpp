@@ -14,7 +14,6 @@
 #include "StdAfx.h"
 #include "CAutoplayer.h"
 
-#include <complex>
 #include "AllinAdjustment.h"
 #include "BetpotCalculations.h"
 #include "BringKeyboard.h"
@@ -29,20 +28,16 @@
 #include "CIteratorThread.h"
 
 #include "CRebuyManagement.h"
-#include "CReplayFrame.h"
-#include "CScraper.h"
 #include "CStableFramesCounter.h"
 #include "CSymbolEngineAutoplayer.h"
 #include "CSymbolEngineCasino.h"
 #include "CSymbolEngineChipAmounts.h"
-#include "CSymbolEngineHistory.h"
 #include "CSymbolEngineUserchair.h"
 #include "CTableState.h"
-#include "MainFrm.h"
-#include "OpenHoldem.h"
 #include "PokerChat.hpp"
 #include "StringFunctions/string_functions.h"
 #include "CMyMutex.h"
+#include "resource.h"
 
 CAutoplayer	*p_autoplayer = NULL;
 
