@@ -7,7 +7,7 @@
 //
 //******************************************************************************
 //
-// Purpose: keyboarddll.cpp : Defines the entry point for the DLL application.
+// Purpose: keyboard.cpp : Defines the entry point for the DLL application.
 //
 //******************************************************************************
 
@@ -61,7 +61,7 @@ void PlayKeyboardEvent(int vkey, int bscan)
 		keybd_event(VK_MENU,    0, KEYEVENTF_KEYUP, 0);
 }
 
-KEYBOARD_DLL_API int SendString(const HWND hwnd, const RECT rect, const CString s, const bool use_comma)
+int SendString(const HWND hwnd, const RECT rect, const CString s, const bool use_comma)
 {
 	// Send each character of the string via PlayKeyboardEvent
 	char ch_str[100];
@@ -83,7 +83,7 @@ KEYBOARD_DLL_API int SendString(const HWND hwnd, const RECT rect, const CString 
 	return (int) true;
 }
 
-KEYBOARD_DLL_API int SendKey(const HWND hwnd, const RECT rect, const char* vkey)
+int SendKey(const HWND hwnd, const RECT rect, const char* vkey)
 {
 	INPUT			input[6];
 
@@ -166,7 +166,7 @@ KEYBOARD_DLL_API int SendKey(const HWND hwnd, const RECT rect, const char* vkey)
 	return (int) true;
 }
 
-KEYBOARD_DLL_API void ProcessMessage(const char *message, const void *param)
+void ProcessMessage(const char *message, const void *param)
 {
 	if (message==NULL)  return;
 }

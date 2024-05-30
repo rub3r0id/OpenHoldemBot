@@ -202,7 +202,7 @@ BEGIN_TESTCASE
     TESTCASE_ID ("1520")
     HEURISTIC_RULE (true)
     REASONING ("If it's a tournament (SNG only, no MTT), then the sum of all chips has to be a multiple of the number of players at the table, as all players got the same amount of chips and there's no rake.")  
-    PRECONDITION (gws("istournament"))
+    PRECONDITION (gws("istournament") != 0)
     POSTCONDITION (IsEqual(int(gws("potcommon") + gws("potplayer") + gws("balance0") + gws("balance1") + gws("balance2") + gws("balance3") + gws("balance4") + gws("balance5") + gws("balance6") + gws("balance7") + gws("balance8") + gws("balance9")) % int(gws("nchairs")), 0))
     SYMBOLS_POSSIBLY_AFFECTED ("istournament, potcommon, potplayer, balance0, balance1, balance2, balance3, balance4, balance5, balance6, balance7, balance8, balance9, nchairs")
 END_TESTCASE
@@ -212,7 +212,7 @@ BEGIN_TESTCASE
     TESTCASE_ID ("1521")
     HEURISTIC_RULE (true)
     REASONING ("If it's a tournament (SNG only, no MTT), then the sum of all chips has to be a multiple of 100, as all players got the same amount of chips and there's no rake.")
-    PRECONDITION (gws("istournament"))
+    PRECONDITION (gws("istournament") != 0)
 	POSTCONDITION (IsEqual((int(gws("potcommon") + gws("potplayer") + gws("balance0") + gws("balance1") + gws("balance2") + gws("balance3") + gws("balance4") + gws("balance5") + gws("balance6") + gws("balance7") + gws("balance8") + gws("balance9")) %100), 0))
     SYMBOLS_POSSIBLY_AFFECTED ("istournament, potcommon, potplayer, balance0, balance1, balance2, balance3, balance4, balance5, balance6, balance7, balance8, balance9")
 END_TESTCASE

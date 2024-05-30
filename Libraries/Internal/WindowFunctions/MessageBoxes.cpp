@@ -11,14 +11,8 @@
 //
 //*******************************************************************************
 
-// Needs to be defined here, before #include "window_functions.h"
-// to generate proper export- and inport-definitions
-#define WINDOW_FUNCTIONS_EXPORTS
-
 #include "window_functions.h"
 #include "Debugger/debugger.h"
-#include <atlstr.h>
-#include <windows.h>
 
 const int k_messagebox_standard_flags = MB_OK | MB_TOPMOST;
 const int k_messagebox_error_flags = k_messagebox_standard_flags | MB_ICONWARNING;

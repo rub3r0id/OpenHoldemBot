@@ -11,8 +11,6 @@
 //
 //******************************************************************************
 
-#define FILES_DLL_EXPORTS
-
 #include "files.h"
 #include "Debugger/debugger.h"
 

@@ -156,9 +156,9 @@ class CTablemap {
   const int cardscrapemethod()       { return GetTMSymbol("cardscrapemethod", 0); }
 	const int HandNumberMinExpectedDigits()	{ return GetTMSymbol("handnumber_min_expected_digits", 0); }
 	const int HandNumberMaxExpectedDigits() { return GetTMSymbol("handnumber_max_expected_digits", 0); }
-  const bool use_comma_instead_of_dot()   { return GetTMSymbol("use_comma_instead_of_dot", false); }
-  const bool islobby()               { return GetTMSymbol("islobby", false); }
-  const bool ispopup()               { return GetTMSymbol("ispopup", false); }
+  const bool use_comma_instead_of_dot()   { return GetTMSymbol("use_comma_instead_of_dot", false) != 0; }
+  const bool islobby()               { return GetTMSymbol("islobby", false) != 0; }
+  const bool ispopup()               { return GetTMSymbol("ispopup", false) != 0; }
 	const CString sitename()		       { return GetTMSymbol("sitename"); } 
 	const CString titletext()	       	 { return GetTMSymbol("titletext"); } 
 	const CString network()			       { return GetTMSymbol("network"); } 

@@ -1,4 +1,3 @@
-#pragma once
 //******************************************************************************
 //
 // This file is part of the OpenHoldem project
@@ -12,13 +11,8 @@
 //
 //******************************************************************************
 
-#ifdef VALIDATOR_DLL_EXPORTS
-#define VALIDATOR_DLL_API __declspec(dllexport)
-#else
-#define VALIDATOR_DLL_API __declspec(dllimport)
-#endif
-
-VALIDATOR_DLL_API bool ValidateGamestate(
-    bool use_heuristic_rules,
-  	bool is_tournament,
-	  bool versus_bin_loaded);
+#pragma once
+bool ValidateGamestate(
+	bool use_heuristic_rules,
+	bool is_tournament,
+	bool versus_bin_loaded);

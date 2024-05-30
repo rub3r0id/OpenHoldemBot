@@ -419,7 +419,7 @@ BOOL CMainFrame::DestroyWindow() {
   // http://www.maxinmontreal.com/forums/viewtopic.php?f=111&t=20459
   // probably caused by incorrect order of deletion,
   // caused by incorrect position of StopThreads and KillTimers.
-  bool success = CFrameWnd::DestroyWindow(); 
+  BOOL success = CFrameWnd::DestroyWindow();
   write_log(Preferences()->debug_gui(), "[GUI] Window deleted\n");
   return success;
 }

@@ -15,48 +15,42 @@
 //
 //******************************************************************************
 
-#ifndef INC_WINDOW_FUNCTIONS_H
-#define INC_WINDOW_FUNCTIONS_H
-
-#ifdef WINDOW_FUNCTIONS_EXPORTS
-#define WINDOW_FUNCTIONS_API __declspec(dllexport)
-#else
-#define WINDOW_FUNCTIONS_API __declspec(dllimport)
+#pragma once
+#ifndef WINVER				// Allow use of features specific to Windows XP or later.
+#define WINVER 0x0501
 #endif
 
-#include <windows.h>
+#include <afxwin.h>
 
-WINDOW_FUNCTIONS_API int CalculateTotalHeightForClientHeight(HWND window, int desired_client_height);
-WINDOW_FUNCTIONS_API int CalculateTotalWidthForClientWidth(HWND window, int desired_client_width);
-WINDOW_FUNCTIONS_API void CascadeSingleWindow(HWND window, int cascade_position);
-WINDOW_FUNCTIONS_API void GetWindowSize(HWND window, int *width, int* height);
-WINDOW_FUNCTIONS_API void MinimizeWindow(HWND window);
-WINDOW_FUNCTIONS_API void MoveWindow(HWND window, int x, int y);
-WINDOW_FUNCTIONS_API void MoveWindowToTopLeft(HWND window);
-WINDOW_FUNCTIONS_API void ResizeToClientSize(HWND window, int new_width, int new_height);
-WINDOW_FUNCTIONS_API void ResizeToTotalSize(HWND window, int new_width, int new_height);
-WINDOW_FUNCTIONS_API void TileSingleWindow(HWND this_window, HWND *null_terminated_list_of_other_windows);
-WINDOW_FUNCTIONS_API bool WinBelongsToExecutable(HWND window, const char* program_name);
-WINDOW_FUNCTIONS_API void WinGetTitle(HWND window, char *title);
-WINDOW_FUNCTIONS_API bool WinIsDesktop(HWND window);
-WINDOW_FUNCTIONS_API bool WinIsMaximized(HWND window);
-WINDOW_FUNCTIONS_API bool WinIsMinimized(HWND window);
-WINDOW_FUNCTIONS_API bool WinIsBring(HWND window);
-WINDOW_FUNCTIONS_API bool WinIsOutOfScreen(HWND window);
-WINDOW_FUNCTIONS_API bool WinIsTaskbar(HWND window);
-WINDOW_FUNCTIONS_API bool WinIsProgramManager(HWND window);
-WINDOW_FUNCTIONS_API bool WinIsTaskManager(HWND window);
-WINDOW_FUNCTIONS_API bool WinIsZeroSized(HWND window);
+int CalculateTotalHeightForClientHeight(HWND window, int desired_client_height);
+int CalculateTotalWidthForClientWidth(HWND window, int desired_client_width);
+void CascadeSingleWindow(HWND window, int cascade_position);
+void GetWindowSize(HWND window, int *width, int* height);
+void MinimizeWindow(HWND window);
+void MoveWindow(HWND window, int x, int y);
+void MoveWindowToTopLeft(HWND window);
+void ResizeToClientSize(HWND window, int new_width, int new_height);
+void ResizeToTotalSize(HWND window, int new_width, int new_height);
+void TileSingleWindow(HWND this_window, HWND *null_terminated_list_of_other_windows);
+bool WinBelongsToExecutable(HWND window, const char* program_name);
+void WinGetTitle(HWND window, char *title);
+bool WinIsDesktop(HWND window);
+bool WinIsMaximized(HWND window);
+bool WinIsMinimized(HWND window);
+bool WinIsBring(HWND window);
+bool WinIsOutOfScreen(HWND window);
+bool WinIsTaskbar(HWND window);
+bool WinIsProgramManager(HWND window);
+bool WinIsTaskManager(HWND window);
+bool WinIsZeroSized(HWND window);
 
 // Errors and warnings.
 // Get displayed (or not) depending on settings
-WINDOW_FUNCTIONS_API void MessageBox_Error_Warning(const char* Message, const char*  Title = "Error");
+void MessageBox_Error_Warning(const char* Message, const char*  Title = "Error");
 // Interactive messages.
 // Get always displayed, even if they are not critical.
 // They are either a result of the users action 
 // or we need request some direct input.
-WINDOW_FUNCTIONS_API int MessageBox_Interactive(const char*  Message, const char*  Title, int Flags);
+int MessageBox_Interactive(const char*  Message, const char*  Title, int Flags);
 // MessageBox for the msgbox$MESSAGE-command of OH-script
-WINDOW_FUNCTIONS_API void MessageBox_OH_Script_Messages(const char*  message);
-
-#endif // INC_WINDOW_FUNCTIONS_H 
+void MessageBox_OH_Script_Messages(const char*  message);

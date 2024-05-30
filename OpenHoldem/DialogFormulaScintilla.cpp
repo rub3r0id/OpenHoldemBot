@@ -40,7 +40,7 @@
 #include "WindowFunctions/window_functions.h"
 #include "OpenHoldem.h"
 #include "OpenHoldemDoc.h"
-#include "PokerTracker/pokertracker_query_definitions.h"
+#include "PokerTracker/PokerTracker.h"
 #include "Scintilla/include/SciLexer.h"
 #include "Scintilla/include/Scintilla.h"
 #include "CWinMgr/WinMgr.h"
@@ -1701,11 +1701,11 @@ void CDlgFormulaScintilla::SetEquiDistantFont(CScintillaWnd *pWnd) {
 		pWnd->SetFontname(i, logfont.lfFaceName);
 		pWnd->SetFontheight(i, -logfont.lfHeight);
 		pWnd->SetBold(i, (logfont.lfWeight==FW_BOLD ? true : false));
-		pWnd->SetItalic(i, logfont.lfItalic);
+		pWnd->SetItalic(i, logfont.lfItalic != 0x0);
 	}
   
   _edit_font.DeleteObject();
-  bool success = _edit_font.CreatePointFont(100, "Courier");
+  BOOL success = _edit_font.CreatePointFont(100, "Courier");
   assert(success);
 }
 

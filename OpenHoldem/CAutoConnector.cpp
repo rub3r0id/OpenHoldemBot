@@ -79,7 +79,7 @@ bool CAutoConnector::IsConnectedToExistingWindow() {
     return false;
   }
   HWND table = attached_hwnd();
-  bool result = IsWindow(table);
+  bool result = IsWindow(table) != 0;
   write_log(Preferences()->debug_autoconnector(), 
     "[CAutoConnector] IsConnectedToexistingWindow: %s\n",
     Bool2CString(result));

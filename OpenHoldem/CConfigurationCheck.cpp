@@ -149,7 +149,7 @@ void CConfigurationCheck::CheckColourDepth()
 void CConfigurationCheck::CheckInputSettings()
 {
 	TCHAR KeyboardLayout[KL_NAMELENGTH];
-	bool Success = GetKeyboardLayoutName((LPSTR)&KeyboardLayout);
+	bool Success = GetKeyboardLayoutName((LPSTR)&KeyboardLayout) != 0;
 
 	if (Success && (_tcscmp(KeyboardLayout, k_KeyboardLayout_UK_US_English) != 0))
 	{

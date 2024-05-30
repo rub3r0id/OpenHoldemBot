@@ -19,7 +19,7 @@
 #include "CAutoConnector.h"
 #include "CEngineContainer.h"
 #include "CLevDistance.h"
-#include "PokerTracker/pokertracker_query_definitions.h"
+#include "PokerTracker/PokerTracker.h"
 #include "CPokerTrackerLookUp.h"
 
 #include "CSymbolEngineActiveDealtPlaying.h"

@@ -14,9 +14,7 @@
 //******************************************************************************
 
 // Needs to be defined here, before #include "user.h"
-// to generate proper export- and inport-definitions
-#define USER_DLL
-
+// to generate proper export- and import-definitions
 #include "user.h"
 #include <conio.h>
 #include <windows.h>
@@ -24,7 +22,7 @@
 
 //******************************************************************************
 //
-// Place all your initalizations in the functions below
+// Place all your initializations in the functions below
 // DLLOnLoad() amd DLLOnUnLoad() get called by the DLL,
 // the other functions get called by OpenHoldem
 //
@@ -61,7 +59,7 @@ void __stdcall DLLUpdateOnHeartbeat() {
 //
 //******************************************************************************
 
-DLL_IMPLEMENTS double __stdcall ProcessQuery(const char* pquery) {
+double __stdcall ProcessQuery(const char* pquery) {
   if (pquery == NULL) {
     return 0;
   }

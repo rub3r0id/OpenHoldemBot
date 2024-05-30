@@ -1489,7 +1489,7 @@ void CDlgTableMap::OnBnClickedNew() {
 		dlgsizes.strings.RemoveAll();
 
 		ZMap::const_iterator z_iter;
-		for (int i=0; i<list_of_sizes.size(); i++) {
+		for (unsigned int i=0; i<list_of_sizes.size(); i++) {
 			bool used_string = false;
       for (z_iter=p_tablemap->z$()->begin(); z_iter!=p_tablemap->z$()->end(); z_iter++) {
 				if (z_iter->second.name == list_of_sizes[i]) { 
@@ -1536,7 +1536,7 @@ void CDlgTableMap::OnBnClickedNew() {
 		dlgsymbols.strings.RemoveAll();
 
 		SMap::const_iterator s_iter;
-		for (int i=0; i<list_of_symbols.size(); i++)	{
+		for (unsigned int i=0; i<list_of_symbols.size(); i++)	{
 			bool used_string = false;
       for (s_iter = p_tablemap->s$()->begin(); s_iter != p_tablemap->s$()->end(); s_iter++) {
         if (list_of_symbols[i] == "" || s_iter->second.name == list_of_symbols[i]) {
@@ -1586,7 +1586,7 @@ void CDlgTableMap::OnBnClickedNew() {
 		dlgregions.name = "";
 		dlgregions.strings.RemoveAll();
     assert(list_of_regions[list_of_regions.size() - 1] != "");
-		for (int i=0; i<list_of_regions.size(); i++) {
+		for (unsigned int i=0; i<list_of_regions.size(); i++) {
       // Ignore empty strings
       // This should no longer happen with the new way we build lists
       // but we keep this checl, as the consequences of empty symbols were nasty.
@@ -1920,7 +1920,7 @@ void CDlgTableMap::OnBnClickedEdit()
 		dlgsizes.height = z_iter->second.height;
 
 		dlgsizes.strings.RemoveAll();
-		for (int i=0; i<list_of_sizes.size(); i++)  
+		for (unsigned int i=0; i<list_of_sizes.size(); i++)  
 			dlgsizes.strings.Add(list_of_sizes[i]);
 
 		// Show dialog
@@ -1985,7 +1985,7 @@ void CDlgTableMap::OnBnClickedEdit()
 		dlgsymbols.titlebartext = title;
 
 		dlgsymbols.strings.RemoveAll();
-		for (int i=0; i<list_of_symbols.size(); i++)  
+		for (unsigned int i=0; i<list_of_symbols.size(); i++)  
 			dlgsymbols.strings.Add(list_of_symbols[i]);
 		
 		// Show dialog
@@ -2046,7 +2046,7 @@ void CDlgTableMap::OnBnClickedEdit()
 		dlgregion.name = r_iter->second.name;
 		
 		dlgregion.strings.RemoveAll();
-		for (int i=0; i<list_of_regions.size(); i++)  
+		for (unsigned int i=0; i<list_of_regions.size(); i++)  
 			dlgregion.strings.Add(list_of_regions[i]);
 		
 		// Show dialog

@@ -11,35 +11,6 @@
 //
 //******************************************************************************
 
-#define _AFXDLL
-
-// Needs to be defined here, before #include "window_functions.h"
-// to generate proper export- and inport-definitions
-#define STRING_FUNCTIONS_EXPORTS
-
-#ifndef VC_EXTRALEAN
-#define VC_EXTRALEAN		// Exclude rarely-used stuff from Windows headers
-#endif
-
-// Modify the following defines if you have to target a platform prior to the ones specified below.
-// Refer to MSDN for the latest info on corresponding values for different platforms.
-#ifndef WINVER				// Allow use of features specific to Windows XP or later.
-#define WINVER 0x0501		// Change this to the appropriate value to target other versions of Windows.
-#endif
-
-#ifndef _WIN32_WINNT		// Allow use of features specific to Windows XP or later.                   
-#define _WIN32_WINNT 0x0501	// Change this to the appropriate value to target other versions of Windows.
-#endif						
-
-#ifndef _WIN32_WINDOWS		// Allow use of features specific to Windows 98 or later.
-#define _WIN32_WINDOWS 0x0410 // Change this to the appropriate value to target Windows Me or later.
-#endif
-
-#ifndef _WIN32_IE			// Allow use of features specific to IE 6.0 or later.
-#define _WIN32_IE 0x0600	// Change this to the appropriate value to target other versions of IE.
-#endif
-
-#include <afxwin.h>
 #include <math.h>
 #include "string_functions.h"
 #include "Debugger/debugger.h"
@@ -50,6 +21,10 @@ const char kCharToBeRemoved = kUnprintableBeepChar;
 
 CString Bool2CString(bool b) {
   return (b ? "true" : "false");
+}
+
+CString Bool2CString(BOOL b) {
+	return (b ? "true" : "false");
 }
 
 CString CStringRemoveLeft(CString string, int number_of_characters_to_remove) {
@@ -124,7 +99,7 @@ inline bool ExtendedIsDigit(char c) {
   // could cause assertions for (signed) chars inside isdigit()
   // http://www.maxinmontreal.com/forums/viewtopic.php?f=110&t=17579&start=90#p122315
   if (!IsStandardASCII(c)) return false;
-  return isdigit(c);
+  return isdigit(c) != 0;
 }
 
 // This function removes superfluous charaters from single numbers only.

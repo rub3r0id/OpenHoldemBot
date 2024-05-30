@@ -394,8 +394,8 @@ void COpenScrapeView::OnKeyDown(UINT nChar, UINT nRepCnt, UINT nFlags)
 		if (r_iter != p_tablemap->r$()->end())
 		{
 			// check what key combinations are down
-			bool shiftKeyDown = GetKeyState(VK_SHIFT)>>7;
-			bool sizeChangeKeyDown = GetKeyState(VK_CONTROL)>>7;
+			bool shiftKeyDown = GetKeyState(VK_SHIFT)>>7 != 0;
+			bool sizeChangeKeyDown = GetKeyState(VK_CONTROL)>>7 != 0;
 
 			int speed = 1;
 			if(shiftKeyDown) {

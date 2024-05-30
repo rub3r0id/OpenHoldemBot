@@ -101,7 +101,7 @@ CString CRegionCloner::CreateName(CString prefix, int number, CString postfix)
 	assert(number >= 0);
 	assert(number <= 9);
 	assert(prefix.GetLength() + postfix.GetLength() < k_max_length_of_name); 
-	sprintf(new_symbol_name, "%s%d%s", prefix, number, postfix);
+	sprintf_s(new_symbol_name, k_max_length_of_name, "%s%d%s", prefix.GetString(), number, postfix.GetString());
 	return CString(new_symbol_name);
 }
 
@@ -115,7 +115,7 @@ void CRegionCloner::CalculateLinearRegions(STablemapRegion first_region, int num
 	int width_of_region = first_region.right - first_region.left;
   int target_size_X, dummy;
   p_tablemap_access->GetClientSize("targetsize", &target_size_X, &dummy);
-	int space_for_remaining_regions = target_size_X;
+	int space_for_remaining_regions = target_size_X
 		- first_region.left // distance to the left of first region
 		- first_region.left // distance to the right of last region
 		- width_of_region;

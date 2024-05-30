@@ -11,8 +11,6 @@
 //
 //******************************************************************************
 
-#define DEBUG_DLL_EXPORTS
-
 #ifdef _DEBUG
 // visual leak detector in debug-mode
 // https://vld.codeplex.com/

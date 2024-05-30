@@ -351,7 +351,7 @@ void CMainFrame::OnEditDuplicateregion()
 	}
 
 	// Add them to the dialog
-	for (int i=0; i<list_of_regions.size(); i++)
+	for (unsigned int i=0; i<list_of_regions.size(); i++)
 	{
 		bool add_it = (strstr(list_of_regions[i], target.GetString())!=NULL);
 

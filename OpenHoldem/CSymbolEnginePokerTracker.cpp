@@ -19,7 +19,7 @@
 #include "CFormulaParser.h"
 #include "CParseErrors.h"
 #include "CParseTreeTerminalNodeEndOfFunction.h"
-#include "PokerTracker/pokertracker_query_definitions.h"
+#include "PokerTracker/PokerTracker.h"
 #include "CPokerTrackerThread.h"
 
 #include "CSymbolEngineCallers.h"

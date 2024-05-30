@@ -47,20 +47,21 @@
 #define _ATL_CSTRING_EXPLICIT_CONSTRUCTORS	// some CString constructors will be explicit
 #define _CRT_SECURE_NO_DEPRECATE 1          // secure functions with checks for buffer size 
 
-// Turn some warnings off, because we consider them harmless
+// Turn some warnings OFF, because we consider them harmless
+// NO NEED TO DO IT
+
+// Turn some warnings to ERRORS, because we consider them helpful
 //
 // https://www.google.de/url?sa=t&rct=j&q=&esrc=s&source=web&cd=2&cad=rja&uact=8&ved=0ahUKEwjqmYHZnMHMAhVHiywKHaB5DWUQFggiMAE&url=https%3A%2F%2Fmsdn.microsoft.com%2Fen-us%2Flibrary%2Faa233834%28v%3Dvs.60%29.aspx&usg=AFQjCNGv_QKRcNSaYPR7j5rYxWxvP7j3Nw&sig2=gvKmaviDIOuyH1_Di0bpWA
 // identifier1' has C-linkage specified, but returns UDT 'identifier2' which is incompatible with C
 // This warning gets caused by the PT-query-definitions-DLL
-// which returns CString instead of char* (inconvenient memory-menagement and string building).
+// which returns CString instead of char* (inconvenient memory-management and string building).
 // This is OK, as long as we call the DL from C / C++.
-#pragma warning(disable:4190)   
+#pragma warning(error:4190)
+//
 // https://msdn.microsoft.com/en-us/library/b6801kcy%28v=vs.100%29.aspx
 // forcing value to bool 'true' or 'false' (performance warning)
-// Harmless and impossible to be fixed (7691 cases of c4800)
-#pragma warning(disable:4800) 
-
-// Turn some warnings to errors, because we consider them helpful
+#pragma warning(error:4800) 
 //
 // https://msdn.microsoft.com/en-us/library/aa231853%28v=vs.60%29.aspx
 // macro redefinition
@@ -136,15 +137,12 @@
 
 // Version
 #define VERSION_NUMBER			14.10
-#define VERSION_TEXT				"14.0.2.0"  // change version number in OpenHoldem.rc also, when needed
+#define VERSION_TEXT			"14.0.2.0"  // change version number in OpenHoldem.rc also, when needed
 
 // PokerEval
 #include "PokerEval/include/poker_defs.h"
 #include "PokerEval/include/pokereval_export.h"
 #include "PokerEval/include/evx_defs.h"
-
-// Assertions
-#include <assert.h>
 
 // Important project headers
 #include "CValidator.h"

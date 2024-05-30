@@ -356,7 +356,7 @@ void CScintillaWnd::SetUnderline(int nStyle, bool bUnderline) {
 // @rvalue bool | true if we are in overstrike mode - else false
 //
 bool CScintillaWnd::GetOverstrike() {
-    return SendMessage(SCI_GETOVERTYPE , 0, 0);
+    return SendMessage(SCI_GETOVERTYPE , 0, 0) != 0;
 }
 
 /////////////////////////////////////

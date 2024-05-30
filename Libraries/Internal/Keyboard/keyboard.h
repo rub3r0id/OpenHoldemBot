@@ -11,8 +11,7 @@
 //
 //******************************************************************************
 
-#ifndef INC_KEYBOARD_DLL_H
-#define INC_KEYBOARD_DLL_H
+#pragma once
 
 #ifdef KEYBOARD_EXPORTS
 #define KEYBOARD_DLL_API __declspec(dllexport)
@@ -36,5 +35,3 @@ const POINT RandomizeClickLocation(const RECT rect);
 const void GetClickPoint(const int x, const int y, const int rx, const int ry, POINT *p);
 const double RandomNormalScaled(const double scale, const double m, const double s);
 const double RandomNormal(const double m, const double s);
-
-#endif //INC_KEYBOARD_DLL_H

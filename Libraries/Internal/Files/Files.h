@@ -1,4 +1,3 @@
-#pragma once
 //******************************************************************************
 //
 // This file is part of the OpenHoldem project
@@ -12,12 +11,10 @@
 //
 //******************************************************************************
 
-#ifdef FILES_DLL_EXPORTS
-#define FILES_DLL_API extern "C" __declspec(dllexport)
-#else
-#define FILES_DLL_API extern "C" __declspec(dllimport)
+#pragma once
+#ifndef WINVER				// Allow use of features specific to Windows XP or later.
+#define WINVER 0x0501
 #endif
-
 #include <afxwin.h>
 
 // OpenPPL-files in the botlogic-directory
@@ -51,33 +48,33 @@ const CString kOpenPPLLibraries[kNumberOfOpenPPLLibraries] = {
 };
 
 // Directories
-FILES_DLL_API CString BotlogicDirectory();
-FILES_DLL_API CString DefaultLogicDirectory();
-FILES_DLL_API CString LogsDirectory();
-FILES_DLL_API CString OpenHoldemDirectory();
-FILES_DLL_API CString OpenPPLLibraryDirectory();
-FILES_DLL_API CString PathOfExecutable();
-FILES_DLL_API CString ReplaySessionDirectory(int session_ID);
-FILES_DLL_API CString ScraperDirectory();
-FILES_DLL_API CString ToolsDirectory();
+CString BotlogicDirectory();
+CString DefaultLogicDirectory();
+CString LogsDirectory();
+CString OpenHoldemDirectory();
+CString OpenPPLLibraryDirectory();
+CString PathOfExecutable();
+CString ReplaySessionDirectory(int session_ID);
+CString ScraperDirectory();
+CString ToolsDirectory();
 // Filenames
-FILES_DLL_API CString ExecutableFilename();
-FILES_DLL_API CString IniFilename();
-FILES_DLL_API CString PureExecutableFilename();
-FILES_DLL_API CString ReplayBitmapFilename(int session_ID, int frame_number);
-FILES_DLL_API CString ReplayHTMLFilename(int session_ID, int frame_number);
+CString ExecutableFilename();
+CString IniFilename();
+CString PureExecutableFilename();
+CString ReplayBitmapFilename(int session_ID, int frame_number);
+CString ReplayHTMLFilename(int session_ID, int frame_number);
 // Paths
-FILES_DLL_API CString CustomLibraryPath();
-FILES_DLL_API CString IniFilePath();
-FILES_DLL_API CString LogFilePath(int session_ID);
-FILES_DLL_API CString ManualModePath();
-FILES_DLL_API CString OpenHoldemManualpath();
-FILES_DLL_API CString OpenPPLManualpath();
-FILES_DLL_API CString VersusPath();
+CString CustomLibraryPath();
+CString IniFilePath();
+CString LogFilePath(int session_ID);
+CString ManualModePath();
+CString OpenHoldemManualpath();
+CString OpenPPLManualpath();
+CString VersusPath();
 // Others
-FILES_DLL_API void OpenFileInExternalSoftware(CString file_name);
-FILES_DLL_API CString TableMapWildcard();
-FILES_DLL_API void SwitchToOpenHoldemDirectory();
+void OpenFileInExternalSoftware(CString file_name);
+CString TableMapWildcard();
+void SwitchToOpenHoldemDirectory();
 //!!bool FileExists(CString filename_or_pattern);
-FILES_DLL_API CString FilenameWithoutPath(CString path);
-FILES_DLL_API CString FilenameWithoutPathAndExtension(CString path);
+CString FilenameWithoutPath(CString path);
+CString FilenameWithoutPathAndExtension(CString path);

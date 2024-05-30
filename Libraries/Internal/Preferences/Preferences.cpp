@@ -11,8 +11,6 @@
 //
 //******************************************************************************
 
-#define PREFERENCES_DLL_EXPORTS
-
 #include "Preferences.h"
 #include "MagicNumbers/MagicNumbers.h"
 #include "Debugger/debugger.h"

@@ -62,7 +62,7 @@ void CParserSymbolTable::VerifySymbol(CString name) {
       "[CParserSymbolTable] memory-symbol, can't be verified\n");
     return;
   }
-  if (memicmp(name, "user", 4) == 0) {
+  if (_memicmp(name, "user", 4) == 0) {
     write_log(Preferences()->debug_symbol_verification(),
       "[CParserSymbolTable] user-variable, can't be verified\n");
     return;

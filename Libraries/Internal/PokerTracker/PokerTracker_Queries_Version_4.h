@@ -1,4 +1,3 @@
-#pragma once
 ///*****************************************************************************
 //
 // This file is part of the OpenHoldem project
@@ -27,6 +26,7 @@
 // http://www.maxinmontreal.com/forums/viewtopic.php?f=273&t=20933
 // http://www.maxinmontreal.com/forums/viewtopic.php?f=273&t=21561
 
+#pragma once
 #define PT4_QUERY_SUPPORT__PFR							(TRUE)	// "pfr aka pt4"
 #define PT4_QUERY_SUPPORT__VPIP							(TRUE)	// "vpip aka pt4"
 #define PT4_QUERY_SUPPORT__ICON							(FALSE) // "icon"

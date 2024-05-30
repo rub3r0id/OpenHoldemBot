@@ -1,4 +1,3 @@
-#pragma once
 //******************************************************************************
 //
 // This file is part of the OpenHoldem project
@@ -15,13 +14,8 @@
 //
 //******************************************************************************
 
-#ifdef GLOBALS_DLL_EXPORTS
-#define GLOBALS_DLL_API __declspec(dllexport)
-#else
-#define GLOBALS_DLL_API __declspec(dllimport)
-#endif
+#pragma once
 
 class CPreferences;
-
-GLOBALS_DLL_API void InitGlobals();
-GLOBALS_DLL_API CPreferences* Preferences();
+void InitGlobals();
+CPreferences* Preferences();

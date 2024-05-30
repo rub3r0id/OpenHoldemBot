@@ -11,11 +11,12 @@
 // Purpose: Validating the game-state, especially scraped data
 //
 //******************************************************************************
+#ifndef WINVER				// Allow use of features specific to Windows XP or later.
+#define WINVER 0x0501
+#endif
 
-#define VALIDATOR_DLL_EXPORTS
-
+#include <afxwin.h>
 #include "GamestateValidation.h"
-#include <atlstr.h>
 // !!!!! move to numerical DLL
 #include "OpenHoldem/FloatingPoint_Comparisions.h"
 #include "WindowFunctions/window_functions.h"

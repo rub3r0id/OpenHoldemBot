@@ -41,7 +41,7 @@ BEGIN_TESTCASE
     TESTCASE_ID ("0805")
     HEURISTIC_RULE (true)
     REASONING ("If we wait for the blinds, we have to act at after at most 10 hands, which should be at most 1200 seconds.")
-    PRECONDITION (gws("issittingout"))
+    PRECONDITION (gws("issittingout") != 0)
     POSTCONDITION (gws("elapsedauto") <= 1200)
     SYMBOLS_POSSIBLY_AFFECTED ("elapsedauto, issittingout")
 END_TESTCASE

@@ -227,7 +227,7 @@ bool CSymbolEngineChairs::MissingSmallBlind() {
     return _missing_smallblind;
   }
   // Not yet initialized
-  return CalculateMissingSmallBlind();
+  return CalculateMissingSmallBlind() != 0;
 }
 
 int CSymbolEngineChairs::CalculateMissingSmallBlind() {

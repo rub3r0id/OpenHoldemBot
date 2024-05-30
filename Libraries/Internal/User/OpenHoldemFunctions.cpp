@@ -154,7 +154,7 @@ FARPROC WINAPI LookupOpenHoldemFunction(char* function_name) {
     return nullptr;
   }
   // https://msdn.microsoft.com/en-us/library/windows/desktop/ms683212(v=vs.85).aspx
-  FARPROC WINAPI function_address = GetProcAddress(openholdem_main_module, function_name);
+  const auto function_address = GetProcAddress(openholdem_main_module, function_name);
   if (function_address == nullptr) {
     CString error_message;
     error_message.Format("Can not find %s in Openholdem.exe.\n",
@@ -186,6 +186,6 @@ void ErrorPointerNotInitialized(CString function_name) {
     function_name);
   MessageBox(0,
     error_message,
-    "DLL Error",
+    "User library error",
     MB_ICONERROR);
 }

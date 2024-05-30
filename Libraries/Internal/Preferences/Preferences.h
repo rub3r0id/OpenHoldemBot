@@ -1,4 +1,3 @@
-#pragma once
 //******************************************************************************
 //
 // This file is part of the OpenHoldem project
@@ -11,11 +10,9 @@
 // Purpose: Storing and loading options from/ro ini-files
 //
 //******************************************************************************
-
-#ifdef PREFERENCES_DLL_EXPORTS
-#define PREFERENCES_DLL_API __declspec(dllexport)
-#else
-#define PREFERENCES_DLL_API __declspec(dllimport)
+#pragma once
+#ifndef WINVER				// Allow use of features specific to Windows XP or later.
+#define WINVER 0x0501
 #endif
 
 #include <afxwin.h>
@@ -169,7 +166,7 @@ enum {
   k_prefs_last_CString_value,
 };
 
-class PREFERENCES_DLL_API CPreferences {
+class CPreferences {
 public:
   // public functions
   CPreferences();
@@ -185,19 +182,19 @@ public:
   // and feed them with some contants at countless locations.
   //
   // Autoplayer
-  const int frame_delay() { return prefs_numerical_values[k_prefs_frame_delay]; }
-  const int click_delay() { return prefs_numerical_values[k_prefs_click_delay]; }
-  const int swag_delay_1() { return prefs_numerical_values[k_prefs_swag_delay_1]; }
-  const int swag_delay_2() { return prefs_numerical_values[k_prefs_swag_delay_2]; }
-  const int swag_delay_3() { return prefs_numerical_values[k_prefs_swag_delay_3]; }
-  const bool engage_autoplayer() { return prefs_numerical_values[k_prefs_engage_autoplayer]; }
-  const bool restore_position_and_focus() { return prefs_numerical_values[k_prefs_restore_position_and_focus]; }
-  const bool use_auto_replay() { return prefs_numerical_values[k_prefs_use_auto_replay]; }
+  const int frame_delay() { return pref_get_int(k_prefs_frame_delay); }
+  const int click_delay() { return pref_get_int(k_prefs_click_delay); }
+  const int swag_delay_1() { return pref_get_int(k_prefs_swag_delay_1); }
+  const int swag_delay_2() { return pref_get_int(k_prefs_swag_delay_2); }
+  const int swag_delay_3() { return pref_get_int(k_prefs_swag_delay_3); }
+  const bool engage_autoplayer() { return pref_get_bool(k_prefs_engage_autoplayer); }
+  const bool restore_position_and_focus() { return pref_get_bool(k_prefs_restore_position_and_focus); }
+  const bool use_auto_replay() { return pref_get_bool(k_prefs_use_auto_replay); }
   // Scraper
-  const int scrape_delay() { return prefs_numerical_values[k_prefs_scrape_delay]; }
+  const int scrape_delay() { return pref_get_int(k_prefs_scrape_delay); }
   // Replay Frames
-  const int replay_record() { return prefs_numerical_values[k_prefs_replay_record]; }
-  const int replay_max_frames() { return prefs_numerical_values[k_prefs_replay_max_frames]; }
+  const int replay_record() { return pref_get_int(k_prefs_replay_record); }
+  const int replay_max_frames() { return pref_get_int(k_prefs_replay_max_frames); }
   // Poker Tracker
   LPCSTR pt_ip_addr() { return NonEmptyStringValueElseDefault(k_prefs_pt_ip_addr); }
   LPCSTR pt_port()    { return NonEmptyStringValueElseDefault(k_prefs_pt_port); }
@@ -205,119 +202,123 @@ public:
   LPCSTR pt_user()    { return NonEmptyStringValueElseDefault(k_prefs_pt_user); }
   LPCSTR pt_pass()    { return NonEmptyStringValueElseDefault(k_prefs_pt_pass); }
   //  PokerChat
-  const int chat_min_delay() { return prefs_numerical_values[k_prefs_chat_min_delay]; }
-  const int chat_random_delay() { return prefs_numerical_values[k_prefs_chat_random_delay]; }
+  const int chat_min_delay() { return pref_get_int(k_prefs_chat_min_delay); }
+  const int chat_random_delay() { return pref_get_int(k_prefs_chat_random_delay); }
   // Logging and debugging
   // Most options always enabled for beginners
   // who are "smart" enough to disable logging,
   // but then cry because the log does not show any info.
-  const bool disable_msgbox() { return prefs_numerical_values[k_prefs_disable_msgbox]; }
-  const int log_max_logsize() { return prefs_numerical_values[k_prefs_log_max_logsize]; }
-  const bool log_delay_function() { return prefs_numerical_values[k_prefs_log_delay_function]; }
-  const bool log_hopper_functions() { return prefs_numerical_values[k_prefs_log_hopper_functions]; }
-  const bool log_icm_functions() { return prefs_numerical_values[k_prefs_log_icm_functions]; }
-  const bool log_ini_functions() { return prefs_numerical_values[k_prefs_log_ini_functions]; }
-  const bool log_prwin_functions() { return prefs_numerical_values[k_prefs_log_prwin_functions]; }
+  const bool disable_msgbox() { return pref_get_bool(k_prefs_disable_msgbox); }
+  const int log_max_logsize() { return pref_get_int(k_prefs_log_max_logsize); }
+  const bool log_delay_function() { return pref_get_bool(k_prefs_log_delay_function); }
+  const bool log_hopper_functions() { return pref_get_bool(k_prefs_log_hopper_functions); }
+  const bool log_icm_functions() { return pref_get_bool(k_prefs_log_icm_functions); }
+  const bool log_ini_functions() { return pref_get_bool(k_prefs_log_ini_functions); }
+  const bool log_prwin_functions() { return pref_get_bool(k_prefs_log_prwin_functions); }
   // Debugging
-  const bool	debug_autoconnector() { return prefs_numerical_values[k_prefs_debug_autoconnector]; }
-  const bool	debug_autoplayer() { return prefs_numerical_values[k_prefs_debug_autoplayer]; }
-  const bool	debug_heartbeat() { return prefs_numerical_values[k_prefs_debug_heartbeat]; }
-  const bool	debug_prwin() { return prefs_numerical_values[k_prefs_debug_prwin]; }
-  const bool	debug_icm() { return prefs_numerical_values[k_prefs_debug_icm]; }
-  const bool	debug_occlusionchecker() { return prefs_numerical_values[k_prefs_debug_occlusionchecker]; }
-  const bool	debug_pokertracker() { return prefs_numerical_values[k_prefs_debug_pokertracker]; }
-  const bool	debug_rebuy() { return prefs_numerical_values[k_prefs_debug_rebuy]; }
-  const bool	debug_replayframes() { return prefs_numerical_values[k_prefs_debug_replayframes]; }
-  const bool	debug_scraper() { return prefs_numerical_values[k_prefs_debug_scraper]; }
-  const bool	debug_sessioncounter() { return prefs_numerical_values[k_prefs_debug_sessioncounter]; }
-  const bool	debug_stableframescounter() { return prefs_numerical_values[k_prefs_debug_stableframescounter]; }
-  const bool	debug_symbolengine() { return prefs_numerical_values[k_prefs_debug_symbolengine]; }
-  const bool	debug_symbolengine_open_ppl() { return prefs_numerical_values[k_prefs_debug_symbolengine_open_ppl]; }
-  const bool	debug_memory_usage() { return prefs_numerical_values[k_prefs_debug_memory_usage]; }
-  const bool	debug_parser() { return prefs_numerical_values[k_prefs_debug_parser]; }
-  const bool	debug_blindlocking() { return prefs_numerical_values[k_prefs_debug_blindlocking]; }
-  const bool	debug_memorysymbols() { return prefs_numerical_values[k_prefs_debug_memorysymbols]; }
-  const bool	debug_tablemap_loader() { return prefs_numerical_values[k_prefs_debug_tablemap_loader]; }
-  const bool	debug_filesystem_monitor() { return prefs_numerical_values[k_prefs_debug_filesystem_monitor]; }
-  const bool	debug_handhistory() { return prefs_numerical_values[k_prefs_debug_handhistory]; }
-  const bool	debug_hopper_messages() { return prefs_numerical_values[k_prefs_debug_hopper_messages]; }
-  const bool	debug_alltherest() { return prefs_numerical_values[k_prefs_debug_alltherest]; }
-  const bool  debug_table_positioner() { return prefs_numerical_values[k_prefs_debug_table_positioner]; }
-  const bool  debug_istournament() { return prefs_numerical_values[k_prefs_debug_istournament]; }
-  const bool  debug_gui() { return prefs_numerical_values[k_prefs_debug_gui]; }
-  const bool  debug_table_limits() { return prefs_numerical_values[k_prefs_debug_table_limits]; }
-  const bool  debug_lazy_scraper() { return prefs_numerical_values[k_prefs_debug_lazy_scraper]; }
-  const bool  debug_betsize_adjustment() { return prefs_numerical_values[k_prefs_debug_betsize_adjustment]; }
-  const bool  debug_allin_adjustment() { return prefs_numerical_values[k_prefs_debug_allin_adjustment]; }
-  const bool  debug_handreset_detector() { return prefs_numerical_values[k_prefs_debug_handreset_detector]; }
-  const bool  debug_engine_container() { return prefs_numerical_values[k_prefs_debug_engine_container]; }
-  const bool  debug_preferences() { return prefs_numerical_values[k_prefs_debug_preferences]; }
-  const bool  debug_dll_extension() { return prefs_numerical_values[k_prefs_debug_dll_extension]; }
-  const bool  debug_openholdem() { return prefs_numerical_values[k_prefs_debug_openholdem]; }
-  const bool  debug_popup_blocker() { return prefs_numerical_values[k_prefs_debug_popup_blocker]; }
-  const bool  debug_scraper_preprocessor() { return prefs_numerical_values[k_prefs_debug_scraper_preprocessor]; }
-  const bool  debug_formula() { return prefs_numerical_values[k_prefs_debug_formula]; }
-  const bool  debug_versus() { return prefs_numerical_values[k_prefs_debug_versus]; }
-  const bool  debug_auto_trace() { return prefs_numerical_values[k_prefs_debug_auto_trace]; }
-  const bool  debug_ast_priority_ordering() { return prefs_numerical_values[k_prefs_debug_ast_priority_ordering]; }
-  const bool  debug_filenames() { return prefs_numerical_values[k_prefs_debug_filenames]; }
-  const bool  debug_hand_and_board_expressions() { return prefs_numerical_values[k_prefs_debug_hand_and_board_expressions]; }
-  const bool  debug_tokenizer() { return prefs_numerical_values[k_prefs_debug_tokenizer]; }
-  const bool  debug_tablepoints() { return prefs_numerical_values[k_prefs_debug_tablepoints]; }
-  const bool  debug_sharedmem() { return prefs_numerical_values[k_prefs_debug_sharedmem]; }
-  const bool  debug_singletons() { return prefs_numerical_values[k_prefs_debug_singletons]; }
-  const bool  debug_autostarter() { return prefs_numerical_values[k_prefs_debug_autostarter]; }
-  const bool  debug_watchdog() { return prefs_numerical_values[k_prefs_debug_watchdog]; }
-  const bool  debug_timers() { return prefs_numerical_values[k_prefs_debug_timers]; }
-  const bool  debug_nutfullhouse() { return prefs_numerical_values[k_prefs_debug_nutfullhouse]; }
-  const bool  debug_multiplexer() { return prefs_numerical_values[k_prefs_debug_multiplexer]; }
-  const bool  debug_symbol_verification() { return prefs_numerical_values[k_prefs_debug_symbol_verification]; }
+  const bool	debug_autoconnector() { return pref_get_bool(k_prefs_debug_autoconnector); }
+  const bool	debug_autoplayer() { return pref_get_bool(k_prefs_debug_autoplayer); }
+  const bool	debug_heartbeat() { return pref_get_bool(k_prefs_debug_heartbeat); }
+  const bool	debug_prwin() { return pref_get_bool(k_prefs_debug_prwin); }
+  const bool	debug_icm() { return pref_get_bool(k_prefs_debug_icm); }
+  const bool	debug_occlusionchecker() { return pref_get_bool(k_prefs_debug_occlusionchecker); }
+  const bool	debug_pokertracker() { return pref_get_bool(k_prefs_debug_pokertracker); }
+  const bool	debug_rebuy() { return pref_get_bool(k_prefs_debug_rebuy); }
+  const bool	debug_replayframes() { return pref_get_bool(k_prefs_debug_replayframes); }
+  const bool	debug_scraper() { return pref_get_bool(k_prefs_debug_scraper); }
+  const bool	debug_sessioncounter() { return pref_get_bool(k_prefs_debug_sessioncounter); }
+  const bool	debug_stableframescounter() { return pref_get_bool(k_prefs_debug_stableframescounter); }
+  const bool	debug_symbolengine() { return pref_get_bool(k_prefs_debug_symbolengine); }
+  const bool	debug_symbolengine_open_ppl() { return pref_get_bool(k_prefs_debug_symbolengine_open_ppl); }
+  const bool	debug_memory_usage() { return pref_get_bool(k_prefs_debug_memory_usage); }
+  const bool	debug_parser() { return pref_get_bool(k_prefs_debug_parser); }
+  const bool	debug_blindlocking() { return pref_get_bool(k_prefs_debug_blindlocking); }
+  const bool	debug_memorysymbols() { return pref_get_bool(k_prefs_debug_memorysymbols); }
+  const bool	debug_tablemap_loader() { return pref_get_bool(k_prefs_debug_tablemap_loader); }
+  const bool	debug_filesystem_monitor() { return pref_get_bool(k_prefs_debug_filesystem_monitor); }
+  const bool	debug_handhistory() { return pref_get_bool(k_prefs_debug_handhistory); }
+  const bool	debug_hopper_messages() { return pref_get_bool(k_prefs_debug_hopper_messages); }
+  const bool	debug_alltherest() { return pref_get_bool(k_prefs_debug_alltherest); }
+  const bool  debug_table_positioner() { return pref_get_bool(k_prefs_debug_table_positioner); }
+  const bool  debug_istournament() { return pref_get_bool(k_prefs_debug_istournament); }
+  const bool  debug_gui() { return pref_get_bool(k_prefs_debug_gui); }
+  const bool  debug_table_limits() { return pref_get_bool(k_prefs_debug_table_limits); }
+  const bool  debug_lazy_scraper() { return pref_get_bool(k_prefs_debug_lazy_scraper); }
+  const bool  debug_betsize_adjustment() { return pref_get_bool(k_prefs_debug_betsize_adjustment); }
+  const bool  debug_allin_adjustment() { return pref_get_bool(k_prefs_debug_allin_adjustment); }
+  const bool  debug_handreset_detector() { return pref_get_bool(k_prefs_debug_handreset_detector); }
+  const bool  debug_engine_container() { return pref_get_bool(k_prefs_debug_engine_container); }
+  const bool  debug_preferences() { return pref_get_bool(k_prefs_debug_preferences); }
+  const bool  debug_dll_extension() { return pref_get_bool(k_prefs_debug_dll_extension); }
+  const bool  debug_openholdem() { return pref_get_bool(k_prefs_debug_openholdem); }
+  const bool  debug_popup_blocker() { return pref_get_bool(k_prefs_debug_popup_blocker); }
+  const bool  debug_scraper_preprocessor() { return pref_get_bool(k_prefs_debug_scraper_preprocessor); }
+  const bool  debug_formula() { return pref_get_bool(k_prefs_debug_formula); }
+  const bool  debug_versus() { return pref_get_bool(k_prefs_debug_versus); }
+  const bool  debug_auto_trace() { return pref_get_bool(k_prefs_debug_auto_trace); }
+  const bool  debug_ast_priority_ordering() { return pref_get_bool(k_prefs_debug_ast_priority_ordering); }
+  const bool  debug_filenames() { return pref_get_bool(k_prefs_debug_filenames); }
+  const bool  debug_hand_and_board_expressions() { return pref_get_bool(k_prefs_debug_hand_and_board_expressions); }
+  const bool  debug_tokenizer() { return pref_get_bool(k_prefs_debug_tokenizer); }
+  const bool  debug_tablepoints() { return pref_get_bool(k_prefs_debug_tablepoints); }
+  const bool  debug_sharedmem() { return pref_get_bool(k_prefs_debug_sharedmem); }
+  const bool  debug_singletons() { return pref_get_bool(k_prefs_debug_singletons); }
+  const bool  debug_autostarter() { return pref_get_bool(k_prefs_debug_autostarter); }
+  const bool  debug_watchdog() { return pref_get_bool(k_prefs_debug_watchdog); }
+  const bool  debug_timers() { return pref_get_bool(k_prefs_debug_timers); }
+  const bool  debug_nutfullhouse() { return pref_get_bool(k_prefs_debug_nutfullhouse); }
+  const bool  debug_multiplexer() { return pref_get_bool(k_prefs_debug_multiplexer); }
+  const bool  debug_symbol_verification() { return pref_get_bool(k_prefs_debug_symbol_verification); }
   // Main window locations
-  const int main_x() { return prefs_numerical_values[k_prefs_main_x]; }
-  const int main_y() { return prefs_numerical_values[k_prefs_main_y]; }
+  const int main_x() { return pref_get_int(k_prefs_main_x); }
+  const int main_y() { return pref_get_int(k_prefs_main_y); }
   // Formula window locations
-  const int formula_x() { return prefs_numerical_values[k_prefs_formula_x]; }
-  const int formula_y() { return prefs_numerical_values[k_prefs_formula_y]; }
-  const int formula_dx() { return prefs_numerical_values[k_prefs_formula_dx]; }
-  const int formula_dy() { return prefs_numerical_values[k_prefs_formula_dy]; }
+  const int formula_x() { return pref_get_int(k_prefs_formula_x); }
+  const int formula_y() { return pref_get_int(k_prefs_formula_y); }
+  const int formula_dx() { return pref_get_int(k_prefs_formula_dx); }
+  const int formula_dy() { return pref_get_int(k_prefs_formula_dy); }
   // Validator
-  const int validator_enabled() { return prefs_numerical_values[k_prefs_validator_enabled]; }
-  const bool validator_stop_on_error() { return prefs_numerical_values[k_prefs_validator_stop_on_error]; }
-  const bool validator_use_heuristic_rules() { return prefs_numerical_values[k_prefs_validator_use_heuristic_rules]; }
-  const bool validator_shoot_replayframe_on_error() { return prefs_numerical_values[k_prefs_validator_shoot_replayframe_on_error]; }
+  const int validator_enabled() { return pref_get_int(k_prefs_validator_enabled); }
+  const bool validator_stop_on_error() { return pref_get_bool(k_prefs_validator_stop_on_error); }
+  const bool validator_use_heuristic_rules() { return pref_get_bool(k_prefs_validator_use_heuristic_rules); }
+  const bool validator_shoot_replayframe_on_error() { return pref_get_bool(k_prefs_validator_shoot_replayframe_on_error); }
   // Auto-starter
-  const bool use_auto_starter() { return prefs_numerical_values[k_prefs_use_auto_starter]; }
-  const bool use_auto_shutdown() { return prefs_numerical_values[k_prefs_use_auto_shutdown]; }
+  const bool use_auto_starter() { return pref_get_bool(k_prefs_use_auto_starter); }
+  const bool use_auto_shutdown() { return pref_get_bool(k_prefs_use_auto_shutdown); }
   // Auto-connector
-  const int autoconnector_when_to_connect() { return prefs_numerical_values[k_prefs_autoconnector_when_to_connect]; }
+  const int autoconnector_when_to_connect() { return pref_get_int(k_prefs_autoconnector_when_to_connect); }
   // GUI
-  const bool gui_first_visible() { return prefs_numerical_values[k_prefs_gui_first_visible]; }
-  const bool gui_all_minimized() { return prefs_numerical_values[k_prefs_gui_all_minimized]; }
-  const bool gui_less() { return prefs_numerical_values[k_prefs_gui_less]; }
+  const bool gui_first_visible() { return pref_get_bool(k_prefs_gui_first_visible); }
+  const bool gui_all_minimized() { return pref_get_bool(k_prefs_gui_all_minimized); }
+  const bool gui_less() { return pref_get_bool(k_prefs_gui_less); }
   // Rebuy
-  const bool rebuy_condition_no_cards() { return prefs_numerical_values[k_prefs_rebuy_condition_no_cards]; }
-  const bool rebuy_condition_change_in_handnumber() { return prefs_numerical_values[k_prefs_rebuy_condition_change_in_handnumber]; }
-  const bool rebuy_condition_heuristic_check_for_occlusion() { return prefs_numerical_values[k_prefs_rebuy_condition_heuristic_check_for_occlusion]; }
-  const int  rebuy_minimum_time_to_next_try() { return prefs_numerical_values[k_prefs_rebuy_minimum_time_to_next_try]; }
+  const bool rebuy_condition_no_cards() { return pref_get_bool(k_prefs_rebuy_condition_no_cards); }
+  const bool rebuy_condition_change_in_handnumber() { return pref_get_bool(k_prefs_rebuy_condition_change_in_handnumber); }
+  const bool rebuy_condition_heuristic_check_for_occlusion() { return pref_get_bool(k_prefs_rebuy_condition_heuristic_check_for_occlusion); }
+  const int  rebuy_minimum_time_to_next_try() { return pref_get_int(k_prefs_rebuy_minimum_time_to_next_try); }
   LPCSTR rebuy_script() { return NonEmptyStringValueElseDefault(k_prefs_rebuy_script); }
   // Configuration check
-  const bool configurationcheck_input_settings() { return prefs_numerical_values[k_prefs_configurationcheck_input_settings]; }
-  const bool configurationcheck_font_settings() { return prefs_numerical_values[k_prefs_configurationcheck_font_settings]; }
+  const bool configurationcheck_input_settings() { return pref_get_bool(k_prefs_configurationcheck_input_settings); }
+  const bool configurationcheck_font_settings() { return pref_get_bool(k_prefs_configurationcheck_font_settings); }
   // Lazy scraping
-  const int lazy_scraping_when_to_scrape() { return prefs_numerical_values[k_prefs_lazy_scraping_when_to_scrape]; }
+  const int lazy_scraping_when_to_scrape() { return pref_get_int(k_prefs_lazy_scraping_when_to_scrape); }
   // Handhistory generator
-  const bool handhistory_generator_enable() { return prefs_numerical_values[k_prefs_handhistory_generator_enable]; }
+  const bool handhistory_generator_enable() { return pref_get_bool(k_prefs_handhistory_generator_enable); }
   // Table Positioner
-  const int table_positioner_options() { return prefs_numerical_values[k_prefs_table_positioner_options]; }
-  const bool table_positioner_always_keep_position() { return prefs_numerical_values[k_prefs_table_positioner_always_keep_position]; }
+  const int table_positioner_options() { return pref_get_int(k_prefs_table_positioner_options); }
+  const bool table_positioner_always_keep_position() { return pref_get_bool(k_prefs_table_positioner_always_keep_position); }
   // Misc
-  const int scraper_zoom() { return prefs_numerical_values[k_prefs_scraper_zoom]; }
+  const int scraper_zoom() { return pref_get_int(k_prefs_scraper_zoom); }
   // Popup blocker
-  const int popup_blocker() { return prefs_numerical_values[k_prefs_popup_blocker]; }
+  const int popup_blocker() { return pref_get_int(k_prefs_popup_blocker); }
   // Obscure
   LPCSTR window_class_name() { return NonEmptyStringValueElseDefault(k_prefs_window_class_name); }
   LPCSTR mutex_name() { return NonEmptyStringValueElseDefault(k_prefs_mutex_name); }
-  const bool simple_window_title() { return prefs_numerical_values[k_prefs_simple_window_title]; }
+  const bool simple_window_title() { return pref_get_bool(k_prefs_simple_window_title); }
+
+  bool pref_get_bool(const int index) const { return prefs_numerical_values[index] != 0.0; }
+  int pref_get_int(const int index) const { return static_cast<int>(prefs_numerical_values[index]); }
+  double pref_get_double(const int index) const { return prefs_numerical_values[index]; }
 public:
   // public mutators
   void SetValue(int index_of_variable, LPCSTR value);

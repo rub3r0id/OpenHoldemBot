@@ -37,15 +37,12 @@ char	startup_path[MAX_PATH];
 
 // Colors
 // (more color codes here: http://htmlhelp.com/cgi-bin/color.cgi)
+#undef CARDSIZEX
+#undef CARDSIZEY
+#undef COLOR_GRAY
 #define CARDSIZEX		36
 #define	CARDSIZEY		50
-#define	COLOR_RED		RGB(255,0,0)
-#define	COLOR_BLACK		RGB(0,0,0)
-#define	COLOR_BLUE		RGB(0,0,255)
-#define	COLOR_GREEN		RGB(0,255,0)
-#define	COLOR_WHITE		RGB(255,255,255)
 #define COLOR_GRAY		RGB(182,182,182)
-#define COLOR_YELLOW	RGB(255,255,0)
 
 // Table layouts
 int		cc[kNumberOfCommunityCards][2] = 
@@ -139,7 +136,7 @@ CManualModeDlg::CManualModeDlg(CWnd* pParent /*=NULL*/) : CDialog(CManualModeDlg
 	// Set exception handler
 	m_hIcon = AfxGetApp()->LoadIcon(IDR_MAINFRAME);
 	black_pen.CreatePen(PS_SOLID, 1, COLOR_BLACK);
-	green_pen.CreatePen(PS_SOLID, 1, COLOR_GREEN);
+	green_pen.CreatePen(PS_SOLID, 1, COLOR_LIME);
 	red_pen.CreatePen(PS_SOLID, 1, COLOR_RED);
 	blue_pen.CreatePen(PS_SOLID, 1, COLOR_BLUE);
 	white_pen.CreatePen(PS_SOLID, 1, COLOR_WHITE);
@@ -615,7 +612,7 @@ void CManualModeDlg::draw_specific_button_indicator(int button_num, char ch, int
 			{
 				pTempPen = (CPen*)pDC->SelectObject(&green_pen);
 				pTempBrush = (CBrush*)pDC->SelectObject(&white_brush);
-				pDC->SetTextColor(COLOR_GREEN);
+				pDC->SetTextColor(COLOR_LIME);
 			}
 			else if (ch=='A') 
 			{

@@ -97,7 +97,7 @@ BEGIN_TESTCASE
     TESTCASE_ID ("0409")
     HEURISTIC_RULE (false)
     REASONING ("If it's my turn, then I must hold cards.")
-    PRECONDITION (gws("ismyturn"))
+    PRECONDITION (gws("ismyturn") != 0)
     POSTCONDITION ((gws("$$pc0") != CARD_UNDEFINED) && (gws("$$pc0") != CARD_BACK) && (gws("$$pc1") != CARD_UNDEFINED) && (gws("$$pc1") != CARD_BACK) && (gws("$$pc0") != CARD_NOCARD) && (gws("$$pc1") != CARD_NOCARD))
     SYMBOLS_POSSIBLY_AFFECTED ("ismyturn, $$pc0, $$pc1")
 END_TESTCASE
@@ -127,7 +127,7 @@ BEGIN_TESTCASE
     TESTCASE_ID ("0412")
     HEURISTIC_RULE (false)
     REASONING ("If I'm sitting out, then I can't hold cards.")
-    PRECONDITION (gws("issittingout"))
+    PRECONDITION (gws("issittingout") != 0)
     POSTCONDITION ((gws("$$pc0") == CARD_NOCARD) && (gws("$$pc1") == CARD_NOCARD))
     SYMBOLS_POSSIBLY_AFFECTED ("issittingout, $$pc0, $$pc1")
 END_TESTCASE
@@ -206,7 +206,7 @@ BEGIN_TESTCASE
     HEURISTIC_RULE (false)
     REASONING ("If both my cards are of the same rank, I have a pocket pair.")
     PRECONDITION ((gws("$$pr0") == gws("$$pr1")) && (gws("$$pc0") != CARD_UNDEFINED) && (gws("$$pc0") != CARD_BACK) && (gws("$$pc1") != CARD_UNDEFINED) && (gws("$$pc0") != CARD_NOCARD) && (gws("$$pc1") != CARD_BACK) )
-    POSTCONDITION (gws("ispair"))
+    POSTCONDITION (gws("ispair") != 0)
     SYMBOLS_POSSIBLY_AFFECTED ("$$pr0, $$pr1, ispair")
 END_TESTCASE
 
@@ -226,7 +226,7 @@ BEGIN_TESTCASE
     HEURISTIC_RULE (false)
     REASONING ("If both my cards are of the same suit, they are suited.")
     PRECONDITION ((gws("$$ps0") == gws("$$ps1")) && (gws("$$pc0") != CARD_UNDEFINED) && (gws("$$pc0") != CARD_NOCARD) && (gws("$$pc0") != CARD_BACK) && (gws("$$pc1") != CARD_UNDEFINED) && (gws("$$pc1") != CARD_NOCARD) && (gws("$$pc1") != CARD_BACK) )
-    POSTCONDITION (gws("issuited"))
+    POSTCONDITION (gws("issuited") != 0)
     SYMBOLS_POSSIBLY_AFFECTED ("$$ps0, $$ps1, issuited")
 END_TESTCASE
 
