@@ -83,6 +83,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Static", "Static", "{847FEE
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Dynamic", "Dynamic", "{0FA1A157-0C30-4561-94B2-7FF2A2D0EC2A}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Publication", "Tools\Publication\Publication.vcxproj", "{B8242F1C-267E-499D-9EF8-849C0F7B7DA4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -167,6 +169,10 @@ Global
 		{F5C4791D-6D57-4D87-8BAA-9DB0D4A34A81}.Debug|Win32.Build.0 = Debug|Any CPU
 		{F5C4791D-6D57-4D87-8BAA-9DB0D4A34A81}.Release|Win32.ActiveCfg = Release|Any CPU
 		{F5C4791D-6D57-4D87-8BAA-9DB0D4A34A81}.Release|Win32.Build.0 = Release|Any CPU
+		{B8242F1C-267E-499D-9EF8-849C0F7B7DA4}.Debug|Win32.ActiveCfg = Debug|Win32
+		{B8242F1C-267E-499D-9EF8-849C0F7B7DA4}.Debug|Win32.Build.0 = Debug|Win32
+		{B8242F1C-267E-499D-9EF8-849C0F7B7DA4}.Release|Win32.ActiveCfg = Release|Win32
+		{B8242F1C-267E-499D-9EF8-849C0F7B7DA4}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -195,9 +201,10 @@ Global
 		{F5C4791D-6D57-4D87-8BAA-9DB0D4A34A81} = {A39F6529-CE10-4EBF-B065-74BD44959C88}
 		{847FEEC4-C671-4064-9528-62D9474C8D17} = {5D249D9C-FB46-4802-8BFC-7D61444AED00}
 		{0FA1A157-0C30-4561-94B2-7FF2A2D0EC2A} = {5D249D9C-FB46-4802-8BFC-7D61444AED00}
+		{B8242F1C-267E-499D-9EF8-849C0F7B7DA4} = {A39F6529-CE10-4EBF-B065-74BD44959C88}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		VisualSVNWorkingCopyRoot = 
 		SolutionGuid = {D1BD5764-20A2-471F-B4A8-1CD413CF87E1}
+		VisualSVNWorkingCopyRoot = 
 	EndGlobalSection
 EndGlobal
