@@ -14,7 +14,7 @@
 #include "files.h"
 #include "Debugger/debugger.h"
 
-const char* k_default_ini_filename = "OpenHoldem_Preferences__feel_free_to_rename_this_file_to_whatever_you_like.INI";
+const char* k_default_ini_filename = "OpenHoldem.ini";
 
 CString OpenHoldemDirectory() {
   // Get the  directory that contains openHoldem for future use.
@@ -40,12 +40,12 @@ CString OpenHoldemDirectory() {
 
 CString BotlogicDirectory() {
   assert(OpenHoldemDirectory() != "");
-  CString bot_logic_dir = CString(OpenHoldemDirectory()) + "bot_logic\\";
+  CString bot_logic_dir = CString(OpenHoldemDirectory()) + "Logic\\";
   return bot_logic_dir;
 }
 
 CString DefaultLogicDirectory() {
-  return BotlogicDirectory() + "DefaultBot\\";
+  return BotlogicDirectory() + "Default\\";
 }
 
 CString IniFilePath() {
@@ -59,7 +59,7 @@ CString IniFilePath() {
 CString IniFilename() {
   WIN32_FIND_DATA find_file_data;
   HANDLE h_find;
-  CString wildcard = OpenHoldemDirectory() + "\\*.INI";
+  CString wildcard = OpenHoldemDirectory() + "\\*.ini";
   CString ini_filename;
 
   // Try to find "first" ini-file.
@@ -104,7 +104,7 @@ void SwitchToOpenHoldemDirectory() {
 }
 
 CString OpenPPLLibraryDirectory() {
-  return BotlogicDirectory() + "OpenPPL_Library\\";
+  return BotlogicDirectory() + "OpenPPL\\";
 }
 
 void OpenFileInExternalSoftware(CString file_name) {
@@ -125,36 +125,36 @@ void OpenFileInExternalSoftware(CString file_name) {
 
 CString ManualDirectory() {
   assert(OpenHoldemDirectory() != "");
-  CString manual_directory = OpenHoldemDirectory() + "documents\\HelpFiles\\";
+  CString manual_directory = OpenHoldemDirectory() + "Documents\\";
   return manual_directory;
 }
 
 CString OpenHoldemManualpath() {
-  CString manual_path = ManualDirectory() + "OpenHoldem_manual.chm";
+  CString manual_path = ManualDirectory() + "OpenHoldem.wiki.bat";
   return manual_path;
 }
 
 CString OpenPPLManualpath() {
-  CString manual_path = ManualDirectory() + "OpenPPL_manual.chm";
+  CString manual_path = ManualDirectory() + "OpenPPL.wiki.bat";
   return manual_path;
 }
 
 CString TableMapWildcard() {
   assert(OpenHoldemDirectory() != "");
   CString wildcard;
-  wildcard.Format("%sscraper\\*.tm", OpenHoldemDirectory());
+  wildcard.Format("%sTables\\*.tm", OpenHoldemDirectory());
   return wildcard;
 }
 
 CString ScraperDirectory() {
   assert(OpenHoldemDirectory() != "");
-  CString scraper_dir = CString(OpenHoldemDirectory()) + "scraper\\";
+  CString scraper_dir = CString(OpenHoldemDirectory()) + "Tables\\";
   return scraper_dir;
 }
 
 CString ToolsDirectory() {
   assert(OpenHoldemDirectory() != "");
-  CString tools_dir = CString(OpenHoldemDirectory()) + "tools\\";
+  CString tools_dir = CString(OpenHoldemDirectory()) + "Tools\\";
   return tools_dir;
 }
 
@@ -162,7 +162,7 @@ CString ReplaySessionDirectory(int session_ID) {
   assert(session_ID >= 0);
   assert(OpenHoldemDirectory() != "");
   CString path;
-  path.Format("%sreplay\\session_%lu\\", OpenHoldemDirectory(), session_ID);
+  path.Format("%sReplay\\session_%lu\\", OpenHoldemDirectory(), session_ID);
   return path;
 }
 
@@ -183,7 +183,7 @@ CString ReplayHTMLFilename(int session_ID, int frame_number) {
 CString LogsDirectory() {
   assert(OpenHoldemDirectory() != "");
   CString path;
-  path.Format("%slogs\\", OpenHoldemDirectory());
+  path.Format("%sLogs\\", OpenHoldemDirectory());
   // Create logs-directoy if necessary
   CreateDirectory(path, NULL);
   return path;
@@ -218,7 +218,7 @@ CString VersusPath() {
 }
 
 CString CustomLibraryPath() {
-  CString result = BotlogicDirectory() + "\\custom_function_library.ohf";
+  CString result = BotlogicDirectory() + "\\custom.ohf";
   return result;
 }
 
