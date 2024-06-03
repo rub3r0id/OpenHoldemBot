@@ -14,11 +14,7 @@
 #ifndef INC_CPOKERTRACKERTHREAD_H
 #define INC_CPOKERTRACKERTHREAD_H
 
-#ifndef _X64
 #include "Postgresql/postgresql-8.2-0-windows-x86/libpq-fe.h"
-#elif _X64 
-#include "Postgresql/postgresql-12.18-1-windows-x64/libpq-fe.h"
-#endif
 #include <map>
 #include "CSpaceOptimizedGlobalObject.h"
 

@@ -92,20 +92,21 @@
       <Command>rmdir $(OutDir) /s/q
 mkdir $(OutDir)
 mkdir $(OutDir)\Tools
-copy /b/v/y $(ProjectDir)OpenHoldem.ini $(OutDir)OpenHoldem.ini
 robocopy $(ProjectDir)\Documents $(OutDir)\Documents /e /ndl /njh /njs /nc /ns /np
 robocopy $(ProjectDir)\Logic $(OutDir)\Logic /e /ndl /njh /njs /nc /ns /np
 robocopy $(ProjectDir)\Tables $(OutDir)\Tables /e /ndl /njh /njs /nc /ns /np
 robocopy $(ProjectDir)\Tools $(OutDir)\Tools /e /ndl /njh /njs /nc /ns /np
 robocopy $(SolutionDir)_out\$(Platform)\$(Configuration) $(OutDir) /e /ndl /njh /njs /nc /ns /np
 robocopy $(SolutionDir)_out\AnyCPU\$(Configuration) $(OutDir) /e /ndl /njh /njs /nc /ns /np
-robocopy $(SolutionDir)Libraries\OpenPPL $(OutDir)\Logic\OpenPPL /e /ndl /njh /njs /nc /ns /np
+robocopy $(SolutionDir)Libraries\OpenPPL $(OutDir)\Logic\OpenPPL /e /ndl /njh /njs /nc /ns /np *.dll
+copy /b/v/y $(ProjectDir)OpenHoldem.ini $(OutDir)OpenHoldem.ini
 del $(OutDir)*.lib /s
 del $(OutDir)*.exp /s
 del $(OutDir)*.ilk /s
 del $(OutDir)*.config /s
 del $(OutDir)*.iobj /s
 del $(OutDir)*.ipdb /s
+rmdir $(OutDir)\Logs /s/q
 move $(OutDir)Replay*.exe $(OutDir)\Tools
 move $(OutDir)ManualMode.exe $(OutDir)\Tools
 move $(OutDir)OpenScrape.exe $(OutDir)\Tools
@@ -135,14 +136,14 @@ exit 0</Command>
       <Command>rmdir $(OutDir) /s/q
 mkdir $(OutDir)
 mkdir $(OutDir)\Tools
-copy /b/v/y $(ProjectDir)OpenHoldem.ini $(OutDir)OpenHoldem.ini
 robocopy $(ProjectDir)\Documents $(OutDir)\Documents /e /ndl /njh /njs /nc /ns /np
 robocopy $(ProjectDir)\Logic $(OutDir)\Logic /e /ndl /njh /njs /nc /ns /np
 robocopy $(ProjectDir)\Tables $(OutDir)\Tables /e /ndl /njh /njs /nc /ns /np
 robocopy $(ProjectDir)\Tools $(OutDir)\Tools /e /ndl /njh /njs /nc /ns /np
 robocopy $(SolutionDir)_out\$(Platform)\$(Configuration) $(OutDir) /e /ndl /njh /njs /nc /ns /np
 robocopy $(SolutionDir)_out\AnyCPU\$(Configuration) $(OutDir) /e /ndl /njh /njs /nc /ns /np
-robocopy $(SolutionDir)Libraries\OpenPPL $(OutDir)\Logic\OpenPPL /e /ndl /njh /njs /nc /ns /np
+robocopy $(SolutionDir)Libraries\OpenPPL $(OutDir)\Logic\OpenPPL /e /ndl /njh /njs /nc /ns /np *.dll
+copy /b/v/y $(ProjectDir)OpenHoldem.ini $(OutDir)OpenHoldem.ini
 del $(OutDir)*.lib /s
 del $(OutDir)*.pdb /s
 del $(OutDir)*.exp /s
@@ -150,6 +151,7 @@ del $(OutDir)*.ilk /s
 del $(OutDir)*.config /s
 del $(OutDir)*.iobj /s
 del $(OutDir)*.ipdb /s
+rmdir $(OutDir)\Logs /s/q
 move $(OutDir)Replay*.exe $(OutDir)\Tools
 move $(OutDir)ManualMode.exe $(OutDir)\Tools
 move $(OutDir)OpenScrape.exe $(OutDir)\Tools

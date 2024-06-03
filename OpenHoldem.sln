@@ -85,6 +85,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Dynamic", "Dynamic", "{0FA1
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Publication", "Tools\Publication\Publication.vcxproj", "{B8242F1C-267E-499D-9EF8-849C0F7B7DA4}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "OpenPPL", "Libraries\OpenPPL\OpenPPL.vcxproj", "{4D909662-6337-47E1-9476-03D9F1CF5D58}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -173,6 +175,10 @@ Global
 		{B8242F1C-267E-499D-9EF8-849C0F7B7DA4}.Debug|Win32.Build.0 = Debug|Win32
 		{B8242F1C-267E-499D-9EF8-849C0F7B7DA4}.Release|Win32.ActiveCfg = Release|Win32
 		{B8242F1C-267E-499D-9EF8-849C0F7B7DA4}.Release|Win32.Build.0 = Release|Win32
+		{4D909662-6337-47E1-9476-03D9F1CF5D58}.Debug|Win32.ActiveCfg = Debug|Win32
+		{4D909662-6337-47E1-9476-03D9F1CF5D58}.Debug|Win32.Build.0 = Debug|Win32
+		{4D909662-6337-47E1-9476-03D9F1CF5D58}.Release|Win32.ActiveCfg = Release|Win32
+		{4D909662-6337-47E1-9476-03D9F1CF5D58}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -202,9 +208,10 @@ Global
 		{847FEEC4-C671-4064-9528-62D9474C8D17} = {5D249D9C-FB46-4802-8BFC-7D61444AED00}
 		{0FA1A157-0C30-4561-94B2-7FF2A2D0EC2A} = {5D249D9C-FB46-4802-8BFC-7D61444AED00}
 		{B8242F1C-267E-499D-9EF8-849C0F7B7DA4} = {A39F6529-CE10-4EBF-B065-74BD44959C88}
+		{4D909662-6337-47E1-9476-03D9F1CF5D58} = {633A809E-EFB4-45C0-B56F-C3023720C665}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {D1BD5764-20A2-471F-B4A8-1CD413CF87E1}
 		VisualSVNWorkingCopyRoot = 
+		SolutionGuid = {D1BD5764-20A2-471F-B4A8-1CD413CF87E1}
 	EndGlobalSection
 EndGlobal

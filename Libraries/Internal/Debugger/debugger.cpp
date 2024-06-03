@@ -20,13 +20,13 @@
 // Check a new version at https://github.com/Azure/vld/releases/
 //  or use OpenHoldemBot\Other\Distributives\VisualLeakDetector
 // Install it
-// Check Microsoft.Cpp.x64.user in View->Other Windows->Property Manager
+// Check Microsoft.Cpp.Win32.user in View->Other Windows->Property Manager  for  Debugger -> Debug | Win32
 //  according https://github.com/KindDragon/vld/wiki/Using-Visual-Leak-Detector
 //1. Select VC++ Directories
 //2. Select "Include directories"
 //3. Add "C:\Program Files (x86)\Visual Leak Detector\include" to the bottom of the list
 //4. Select "Library directories"
-//5. Add "C:\Program Files (x86)\Visual Leak Detector\lib\Win64" to the bottom of the list
+//5. Add "C:\Program Files (x86)\Visual Leak Detector\lib\Win32" to the bottom of the list
 #endif _DEBUG
 
 #include "debugger.h"
