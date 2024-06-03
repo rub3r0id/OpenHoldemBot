@@ -31,4 +31,4 @@ _out/
 _pub/
 
 #exclusions
-!Tools/Publication/Tools 
+!Tools/Publication/Tools/
