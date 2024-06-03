@@ -448,12 +448,12 @@ bool StringAIsPrefixOfStringB(const char *string_a, const char *string_b) {
 }
 
 bool StringAIsPostfixOfStringB(const char *string_a, const char *string_b) {
-  int length_a = strlen(string_a);
-  int length_b = strlen(string_b);
+  auto length_a = strlen(string_a);
+  auto length_b = strlen(string_b);
   if (length_a > length_b) {
     return false;
   }
-  int start_position = length_b - length_a;
+  auto start_position = length_b - length_a;
   if (memcmp(string_a, (string_b + start_position), length_a) == 0) {
     return true;
   }
@@ -588,7 +588,7 @@ void WarnAboutNonASCIICharacters(const CString *s) {
         "Title: %s\n"
         "Please report to the developers\n"
         "http://www.maxinmontreal.com/forums/viewtopic.php?f=156&t=20167",
-        char_value, signed_char_value, s);
+        char_value, signed_char_value, s->GetString());
       ///!!!write_log(k_always_log_errors, message);
     }
   }

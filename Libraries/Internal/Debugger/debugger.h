@@ -17,6 +17,15 @@
 #endif
 
 #include <assert.h>
+#ifdef LOGASSERT
+#undef assert
+#define assert(expression) (void)( \
+			write_log_assert((!!(expression)), "[Assertion] %s:%s:%d is not (%s)\n", (const char*)(__FILE__), (const char*)(__FUNCTION__), (unsigned)(__LINE__), (const char*)(#expression)) \
+        )
+#undef AssertRange
+#define AssertRange(/*double*/ value, /*double*/ lower_bound, /*double*/ upper_bound) \
+    { assert((value) >= (lower_bound)); assert((value) <= (upper_bound)); }
+#endif
 
 void start_log(int current_session_iD, bool delete_old_log, const char* logFilePath);
 void stop_log();
