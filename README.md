@@ -1,6 +1,6 @@
 <p align="center">
   <br />
-  <a title="Welcome" href="https://github.com/OpenHoldem/openholdembot/releases"><img src="https://raw.githubusercontent.com/rub3r0id/OpenHoldemBot/master/Other/Assets/openholdembot_logo.png" alt="OpenHoldemBot Logo" width="50%" /></a>
+  <a title="Welcome" href="https://github.com/OpenHoldem/openholdembot/releases"><img src="https://raw.githubusercontent.com/rub3r0id/OpenHoldemBot/dev/Other/Assets/openholdembot_logo.png" alt="OpenHoldemBot Logo" width="50%" /></a>
 </p>
 
 # Notes
@@ -19,8 +19,8 @@ Check our [wiki](https://github.com/rub3r0id/openholdembot/wiki)
 [OpenHoldemBot](https://github.com/OpenHoldem/openholdembot) is opensource and supported by <a title="Learn more about OpenHoldemBot" href="https://www.maxinmontreal.com/forums/">maxinmontreal</a> community. 
 
 # Building
-* Use [Visual Studio Community 2022](https://visualstudio.microsoft.com/ru/vs/community/) with MFC Build Tools v143
-  * Install [Visual Leak Detector](https://github.com/Azure/vld/releases/) for Debug configuration and [follow it](https://raw.githubusercontent.com/OpenHoldem/openholdembot/master/Libraries/Internal/Debugger/debugger.cpp) to configure
+* Use [Visual Studio Community 2022](https://visualstudio.microsoft.com/ru/vs/community/) with MFC Build Tools v143 for x64 target machine
+  * Install [Visual Leak Detector](https://github.com/Azure/vld/releases/) for Debug configuration and [follow it](https://raw.githubusercontent.com/rub3r0id/OpenHoldemBot/dev/Libraries/Internal/Debugger/debugger.cpp) to configure
 > **NOTE:** Check _pub folder into project root folder to get compiled files and zipped archive
 
 # License
