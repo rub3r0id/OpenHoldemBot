@@ -1030,7 +1030,7 @@ bool CScraper::IsExtendedNumberic(CString text) {
 }
 
 bool CScraper::IsIdenticalScrape() {
-  __HDC_HEADER
+	__HDC_HEADER
 
 	// Get bitmap of whole window
 	RECT		cr = {0};
@@ -1040,18 +1040,18 @@ bool CScraper::IsIdenticalScrape() {
 	BitBlt(hdcCompatible, 0, 0, cr.right, cr.bottom, hdc, cr.left, cr.top, SRCCOPY);
 	SelectObject(hdcCompatible, old_bitmap);
 
-  p_table_state->TableTitle()->UpdateTitle();
-	
+	p_table_state->TableTitle()->UpdateTitle();
+
 	// If the bitmaps are the same, then return now
 	// !! How often does this happen?
 	// !! How costly is the comparison?
 	if (BitmapsAreEqual(_entire_window_last, _entire_window_cur) 
-      && !p_table_state->TableTitle()->TitleChangedSinceLastHeartbeat()) 	{
+	  && !p_table_state->TableTitle()->TitleChangedSinceLastHeartbeat()) 	{
 		DeleteDC(hdcCompatible);
 		DeleteDC(hdcScreen);
 		ReleaseDC(p_autoconnector->attached_hwnd(), hdc);
 		write_log(Preferences()->debug_scraper(), "[CScraper] IsIdenticalScrape() true\n");
-    __HDC_FOOTER_ATTENTION_HAS_TO_BE_CALLED_ON_EVERY_FUNCTION_EXIT_OTHERWISE_MEMORY_LEAK
+	__HDC_FOOTER_ATTENTION_HAS_TO_BE_CALLED_ON_EVERY_FUNCTION_EXIT_OTHERWISE_MEMORY_LEAK
 		return true;
 	}
 	// Copy into "last" bitmap

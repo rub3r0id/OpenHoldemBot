@@ -98,13 +98,17 @@ bool CAutoConnector::IsConnectedToGoneWindow() {
   return true;
 }
 
-void CAutoConnector::Check_TM_Against_All_Windows_Or_TargetHWND(int tablemap_index, HWND targetHWnd) {
+void CAutoConnector::Check_TM_Against_All_Windows_Or_TargetHWND(int tablemap_index, HWND targetHWnd)
+{
 	write_log(Preferences()->debug_autoconnector(), "[CAutoConnector] Check_TM_Against_All_Windows(..)\n");
-  if (targetHWnd == NULL) {
+	if (targetHWnd == NULL) 
+	{
 		EnumWindows(EnumProcTopLevelWindowList, (LPARAM) tablemap_index);
-  } else {
+	}
+	else 
+	{
 		EnumProcTopLevelWindowList(targetHWnd, (LPARAM) tablemap_index);
-  }
+	}
 }
 
 void CAutoConnector::CheckIfWindowMatchesMoreThanOneTablemap(HWND hwnd) {
@@ -164,33 +168,41 @@ BOOL CALLBACK EnumProcTopLevelWindowList(HWND hwnd, LPARAM lparam) {
 
 	write_log(Preferences()->debug_autoconnector(), "[CAutoConnector] EnumProcTopLevelWindowList(..)\n");
 	write_log(Preferences()->debug_autoconnector(), "[CAutoConnector] Tablemap nr. %d\n", tablemap_index);
-  if (!IsWindowVisible(hwnd)) {
-    return true;
-  }
-  // Since OH 11.1.0 We do no longer check for (GetParent(hwnd) != NULL) 
-  // because we want OpenHoldem to be able to connect to popups
-  // e.g. to click a confirmation-button
-  // or maybe even do more complicated hopper-tasks in the future.
-  write_log(Preferences()->debug_autoconnector(), "[CAutoConnector] EnumProcTopLevelWindowList(..) found a window candidate...\n");
+	if (!IsWindowVisible(hwnd)) 
+	{
+		return true;
+	}
+	// Since OH 11.1.0 We do no longer check for (GetParent(hwnd) != NULL) 
+	// because we want OpenHoldem to be able to connect to popups
+	// e.g. to click a confirmation-button
+	// or maybe even do more complicated hopper-tasks in the future.
+	write_log(Preferences()->debug_autoconnector(), "[CAutoConnector] EnumProcTopLevelWindowList(..) found a window candidate...\n");
 	// See if it matches the currently loaded table map
-  if (Check_TM_Against_Single_Window(tablemap_index, hwnd)) { 
+	if (Check_TM_Against_Single_Window(tablemap_index, hwnd)) 
+	{ 
 		// Filter out served tables already here,
 		// otherwise the other list used in the dialog
 		// to select windows manually will cause us lots of headaches,
 		// as the lists will be of different size 
 		// and the indexes will not match.
-    if (p_sharedmem->PokerWindowAttached(hwnd)) {
-      write_log(Preferences()->debug_autoconnector(), "[CAutoConnector] Window candidate already served: [%d]\n", hwnd);
-    } else if (p_popup_handler->WinIsOpenHoldem(hwnd)) {
-      write_log(Preferences()->debug_popup_blocker(), "[CAutoConnector] Window belongs to OpenHoldem\n");
-		}	else {
-			write_log(Preferences()->debug_autoconnector(), "[CAutoConnector] Adding window candidate to the list: [%d]\n", hwnd);
-			tablelisthold.hwnd = hwnd;
-      tablelisthold.tablemap_index = tablemap_index;
-			g_tlist.Add(tablelisthold);
+		if (p_sharedmem->PokerWindowAttached(hwnd)) 
+		{
+			write_log(Preferences()->debug_autoconnector(), "[CAutoConnector] Window candidate already served: [%d]\n", hwnd);
 		}
+		else 
+			if (p_popup_handler->WinIsOpenHoldem(hwnd)) 
+			{
+				write_log(Preferences()->debug_popup_blocker(), "[CAutoConnector] Window belongs to OpenHoldem\n");
+			}
+			else 
+			{
+				write_log(Preferences()->debug_autoconnector(), "[CAutoConnector] Adding window candidate to the list: [%d]\n", hwnd);
+				tablelisthold.hwnd = hwnd;
+				tablelisthold.tablemap_index = tablemap_index;
+				g_tlist.Add(tablelisthold);
+			}
 	}
-  return true;  // keep processing through entire list of windows
+	return true;  // keep processing through entire list of windows
 }
 
 void CAutoConnector::WriteLogTableReset(CString event_and_reason) {
@@ -233,51 +245,54 @@ void CAutoConnector::GoIntoPopupBlockingMode() {
   }
 }
 
-bool CAutoConnector::Connect(HWND targetHWnd) {
+bool CAutoConnector::Connect(HWND targetHWnd)
+{
 	int					line = 0, ret = 0;
 	char				title[MAX_WINDOW_TITLE] = {0};
 	int					SelectedItem = kUndefined;
 	CString			current_path = "";
 	BOOL				bFound = false;
-  // Potential race-condition, as some objects
-  // (especially GUI objects) get created by another thread.
-  // We just skip connection if OH is not yet initialized.
-  // http://www.maxinmontreal.com/forums/viewtopic.php?f=156&t=19706
-  // 
-  // We have to check and return very early, we must not do this
-  // after locking the mutex, otherwiese we block other instances forever.
-  // http://www.maxinmontreal.com/forums/viewtopic.php?f=110&t=19407&p=140417#p140417
-  if (p_table_positioner == NULL) return false;
-  if (p_autoplayer == NULL) return false;
-  if (p_casino_interface == NULL) return false;
-  if (p_engine_container == NULL) return false;
-  if (p_flags_toolbar == NULL) return false;
-  if (p_scraper == NULL) return false;
-  if (p_sharedmem == NULL) return false;
-  if (p_tablemap == NULL) return false;
-  if (p_tablemap_loader == NULL) return false;
-  if (p_table_state == NULL) return false;
-  if (p_table_positioner == NULL) return false;
+	// Potential race-condition, as some objects
+	// (especially GUI objects) get created by another thread.
+	// We just skip connection if OH is not yet initialized.
+	// http://www.maxinmontreal.com/forums/viewtopic.php?f=156&t=19706
+	// 
+	// We have to check and return very early, we must not do this
+	// after locking the mutex, otherwiese we block other instances forever.
+	// http://www.maxinmontreal.com/forums/viewtopic.php?f=110&t=19407&p=140417#p140417
+	if (p_table_positioner == NULL) return false;
+	if (p_autoplayer == NULL) return false;
+	if (p_casino_interface == NULL) return false;
+	if (p_engine_container == NULL) return false;
+	if (p_flags_toolbar == NULL) return false;
+	if (p_scraper == NULL) return false;
+	if (p_sharedmem == NULL) return false;
+	if (p_tablemap == NULL) return false;
+	if (p_tablemap_loader == NULL) return false;
+	if (p_table_state == NULL) return false;
+	if (p_table_positioner == NULL) return false;
 	write_log(Preferences()->debug_autoconnector(), "[CAutoConnector] Connect(..)\n");
-  ASSERT(_autoconnector_mutex->m_hObject != NULL); 
+	ASSERT(_autoconnector_mutex->m_hObject != NULL); 
 	write_log(Preferences()->debug_autoconnector(), "[CAutoConnector] Locking autoconnector-mutex\n");
-	if (!_autoconnector_mutex->Lock(500))	{
+	if (!_autoconnector_mutex->Lock(500))	
+	{
 		write_log(Preferences()->debug_autoconnector(), "[CAutoConnector] Could not grab mutex; early exit\n");
 		return false; 
 	}
-  // Clear global list for holding table candidates
+	// Clear global list for holding table candidates
 	g_tlist.RemoveAll();
 	write_log(Preferences()->debug_autoconnector(), "[CAutoConnector] Number of tablemaps loaded: %i\n",
-    p_tablemap_loader->NumberOfTableMapsLoaded());
-	for (int tablemap_index=0; tablemap_index<p_tablemap_loader->NumberOfTableMapsLoaded(); tablemap_index++) {
+	p_tablemap_loader->NumberOfTableMapsLoaded());
+	for (int tablemap_index=0; tablemap_index<p_tablemap_loader->NumberOfTableMapsLoaded(); tablemap_index++) 
+	{
 		write_log(Preferences()->debug_autoconnector(), "[CAutoConnector] Going to check TM nr. %d out of %d\n", 
 			tablemap_index, p_tablemap_loader->NumberOfTableMapsLoaded());
 		Check_TM_Against_All_Windows_Or_TargetHWND(tablemap_index, targetHWnd);
 	}
 	// Put global candidate table list in table select dialog variables
 	int n_window_candidates = (int) g_tlist.GetSize();
-  write_log(Preferences()->debug_autoconnector(), "[CAutoConnector] Number of table candidates: %i\n", 
-    n_window_candidates);
+	write_log(Preferences()->debug_autoconnector(), "[CAutoConnector] Number of table candidates: %i\n", 
+	n_window_candidates);
 	if (n_window_candidates == 0) {
 		FailedToConnectBecauseNoWindowInList();
 	}	else 	{
@@ -286,40 +301,40 @@ bool CAutoConnector::Connect(HWND targetHWnd) {
 			FailedToConnectProbablyBecauseAllTablesAlreadyServed();
 		}	else {
 			write_log(Preferences()->debug_autoconnector(), "[CAutoConnector] Window [%d] selected\n", g_tlist[SelectedItem].hwnd);
-      // Load correct tablemap, and save hwnd/rect/numchairs of table that we are "attached" to
+	  // Load correct tablemap, and save hwnd/rect/numchairs of table that we are "attached" to
 			set_attached_hwnd(g_tlist[SelectedItem].hwnd);
-      CheckIfWindowMatchesMoreThanOneTablemap(attached_hwnd());
+	  CheckIfWindowMatchesMoreThanOneTablemap(attached_hwnd());
 			assert(p_tablemap != NULL);
-      CString tablemap_to_load = p_tablemap_loader->GetTablemapPathToLoad(g_tlist[SelectedItem].tablemap_index);
+	  CString tablemap_to_load = p_tablemap_loader->GetTablemapPathToLoad(g_tlist[SelectedItem].tablemap_index);
 			write_log(Preferences()->debug_autoconnector(), "[CAutoConnector] Selected tablemap: %s\n", tablemap_to_load);
 			p_tablemap->LoadTablemap(tablemap_to_load);
 			write_log(Preferences()->debug_autoconnector(), "[CAutoConnector] Tablemap successfully loaded\n");
   		// Create bitmaps
 			p_scraper->CreateBitmaps();
 			write_log(Preferences()->debug_autoconnector(), "[CAutoConnector] Scraper-bitmaps created\n");
-      // Clear scraper fields
+	  // Clear scraper fields
 			p_table_state->Reset();
-      p_casino_interface->Reset();
+	  p_casino_interface->Reset();
 			write_log(Preferences()->debug_autoconnector(), "[CAutoConnector] Table state cleared\n");
-      // Reset symbols
+	  // Reset symbols
 			p_engine_container->UpdateOnConnection();
-      write_log(Preferences()->debug_autoconnector(), "[CAutoConnector] UpdateOnConnection executed (during connection)\n");
+	  write_log(Preferences()->debug_autoconnector(), "[CAutoConnector] UpdateOnConnection executed (during connection)\n");
 			write_log(Preferences()->debug_autoconnector(), "[CAutoConnector] Going to continue with scraper output and scraper DLL\n");
-      // Reset "ScraperOutput" dialog, if it is live
+	  // Reset "ScraperOutput" dialog, if it is live
 			if (m_ScraperOutputDlg) {
 				m_ScraperOutputDlg->Reset();
 			}
 			p_flags_toolbar->ResetButtonsOnConnect();
-      // The main GUI gets created by another thread.
-      // This can be slowed down if there are popups (parse-errors).
-      // Handle the race-condition
-      WAIT_FOR_CONDITION(PMainframe() != NULL)
-      assert(PMainframe() != NULL);
+	  // The main GUI gets created by another thread.
+	  // This can be slowed down if there are popups (parse-errors).
+	  // Handle the race-condition
+	  WAIT_FOR_CONDITION(PMainframe() != NULL)
+	  assert(PMainframe() != NULL);
 			// Reset display
 			PMainframe()->ResetDisplay();
-      // log OH title bar text and table reset
-      WriteLogTableReset("NEW CONNECTION");
-      p_table_positioner->ResizeToTargetSize();
+	  // log OH title bar text and table reset
+	  WriteLogTableReset("NEW CONNECTION");
+	  p_table_positioner->ResizeToTargetSize();
 			p_table_positioner->PositionMyWindow();
 			p_autoplayer->EngageAutoPlayerUponConnectionIfNeeded();
 		}
@@ -329,26 +344,28 @@ bool CAutoConnector::Connect(HWND targetHWnd) {
 	return (SelectedItem != kUndefined);
 }
 
-void CAutoConnector::Disconnect(CString reason_for_disconnection) {
+void CAutoConnector::Disconnect(CString reason_for_disconnection)
+{
 	write_log(Preferences()->debug_autoconnector(), "[CAutoConnector] Disconnect()\n");
-  if (!IsConnectedToAnything()) {
-    // Be extra safe.
-    // This stupid error happened, when OnTimer() only checked if the window 
-    // still existed, but not if we were connected at all.
-    // Then Diconnect() plus Connect() lead to freezing.
-    write_log(k_always_log_errors, "[CAutoConnector] ERROR: Disconnect() called while not connected\n");
-    return;
-  }
-  // First close scraper-output-dialog,
-  // as an updating dialog without a connected table can crash.
-  CDlgScraperOutput::DestroyWindowSafely();
-  // Make sure autoplayer is off
-  write_log(Preferences()->debug_autoconnector(), "[CAutoConnector] Stopping autoplayer\n");
-  p_autoplayer->EngageAutoplayer(false);
+	if (!IsConnectedToAnything()) 
+	{
+		// Be extra safe.
+		// This stupid error happened, when OnTimer() only checked if the window 
+		// still existed, but not if we were connected at all.
+		// Then Diconnect() plus Connect() lead to freezing.
+		write_log(k_always_log_errors, "[CAutoConnector] ERROR: Disconnect() called while not connected\n");
+		return;
+	}
+	// First close scraper-output-dialog,
+	// as an updating dialog without a connected table can crash.
+	CDlgScraperOutput::DestroyWindowSafely();
+	// Make sure autoplayer is off
+	write_log(Preferences()->debug_autoconnector(), "[CAutoConnector] Stopping autoplayer\n");
+	p_autoplayer->EngageAutoplayer(false);
 	// Wait for mutex - "forever" if necessary, as we have to clean up.
 	ASSERT(_autoconnector_mutex->m_hObject != NULL); 
 	write_log(Preferences()->debug_autoconnector(), "[CAutoConnector] Locking autoconnector-mutex\n");
-  _autoconnector_mutex->Lock(INFINITE); 
+	_autoconnector_mutex->Lock(INFINITE); 
 	p_engine_container->UpdateOnDisconnection();
 	// Clear "attached" info
 	set_attached_hwnd(NULL);
@@ -360,9 +377,9 @@ void CAutoConnector::Disconnect(CString reason_for_disconnection) {
 	_autoconnector_mutex->Unlock();	
 	// Delete bitmaps
 	p_scraper->DeleteBitmaps();
-  // Clear scraper fields
+	// Clear scraper fields
 	p_table_state->Reset();
-  p_casino_interface->Reset();
+	p_casino_interface->Reset();
 	// Reset symbols
 	p_engine_container->UpdateOnConnection();
 	write_log(Preferences()->debug_autoconnector(), "[CAutoConnector] UpdateOnConnection executed (disconnection)\n");
@@ -372,11 +389,12 @@ void CAutoConnector::Disconnect(CString reason_for_disconnection) {
 	// Reset Display 
 	PMainframe()->ResetDisplay();
 	// Reset "ScraperOutput" dialog, if it is live
-	if (m_ScraperOutputDlg)	{
+	if (m_ScraperOutputDlg)	
+	{
 		m_ScraperOutputDlg->Reset();
 	}
-  CString message;
-  message.Format("DISCONNECTION -- %s", reason_for_disconnection);
+	CString message;
+	message.Format("DISCONNECTION -- %s", reason_for_disconnection);
 	WriteLogTableReset(message);
 	write_log(Preferences()->debug_autoconnector(), "[CAutoConnector] Disconnect done\n");
 }

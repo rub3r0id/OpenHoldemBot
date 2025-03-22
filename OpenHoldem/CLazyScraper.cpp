@@ -78,30 +78,35 @@ CLazyScraper::~CLazyScraper() {
 // If in doubt be conservative.
 
 void CLazyScraper::DoScrape() {
-	if (p_scraper->IsIdenticalScrape())	{
+	if (p_scraper->IsIdenticalScrape())	
+	{
 		_is_identical_scrape = true;
-    return;
+		return;
 	}
-  _is_identical_scrape = false;
+	_is_identical_scrape = false;
 	p_scraper->ScrapeLimits();
-	if (NeedDealerChair()) { 
+	if (NeedDealerChair()) 
+	{ 
 		p_scraper->ScrapeDealer();
 	}
-	if (NeedUsersCards())	{
+	if (NeedUsersCards())	
+	{
 		assert(p_engine_container->symbol_engine_userchair()->userchair_confirmed());
 		p_scraper->ScrapePlayerCards(p_engine_container->symbol_engine_userchair()->userchair());
 	}
 	p_scraper->ScrapeSeatedActive();
-	if (NeedAllPlayersCards()) {
+	if (NeedAllPlayersCards()) 
+	{
 		p_scraper->ScrapeAllPlayerCards(); 
 	}
-	if (NeedCommunityCards())	{
+	if (NeedCommunityCards())	
+	{
 		p_scraper->ScrapeCommonCards();
 	}
 	if (NeedFoldButton())	{
 		// For fast detection of my turn
 		// Currently included in NeedActionbuttons()
-    // No extra-scrape of fold-button for improved reaction time
+		// No extra-scrape of fold-button for improved reaction time
 	}
 	if (NeedActionbuttons()) {
 		p_scraper->ScrapeActionButtons();
@@ -129,12 +134,12 @@ void CLazyScraper::DoScrape() {
 	if (NeedUnknownPlayerNames())	{
 		ScrapeUnknownPlayerNames();
 	}
-  if (NeedColourCodes()) {
-    p_scraper->ScrapeColourCodes();
-  }
-  if (NeedMTTRegions()) {
-    p_scraper->ScrapeMTTRegions();
-  }
+	if (NeedColourCodes()) {
+	p_scraper->ScrapeColourCodes();
+	}
+	if (NeedMTTRegions()) {
+	p_scraper->ScrapeMTTRegions();
+	}
 }
 
 bool CLazyScraper::NeedDealerChair() {

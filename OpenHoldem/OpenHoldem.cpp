@@ -64,15 +64,15 @@ COpenHoldemApp theApp;
 
 // COpenHoldemApp initialization
 BOOL COpenHoldemApp::InitInstance() {
-  // InitCommonControlsEx() is required on Windows XP if an application
+	// InitCommonControlsEx() is required on Windows XP if an application
 	// manifest specifies use of ComCtl32.dll version 6 or later to enable
 	// visual styles.  Otherwise, any window creation will fail.
-  //
-  // This code should probably be called at the VERY beginning,
-  // especially to support UNICODE-filenames on Win7/8,
-  // which might be as early as the ini-file.
-  // http://www.maxinmontreal.com/forums/viewtopic.php?f=110&t=17579&p=122399#p122398
-  // http://stackoverflow.com/questions/6633515/mfc-app-assert-fail-at-crecentfilelistadd-on-command-line-fileopen
+	//
+	// This code should probably be called at the VERY beginning,
+	// especially to support UNICODE-filenames on Win7/8,
+	// which might be as early as the ini-file.
+	// http://www.maxinmontreal.com/forums/viewtopic.php?f=110&t=17579&p=122399#p122398
+	// http://stackoverflow.com/questions/6633515/mfc-app-assert-fail-at-crecentfilelistadd-on-command-line-fileopen
 	INITCOMMONCONTROLSEX InitCtrls;
 	InitCtrls.dwSize = sizeof(InitCtrls);
 	// Set this to include all the common control classes you want to use
@@ -97,9 +97,9 @@ BOOL COpenHoldemApp::InitInstance() {
 	wc.lpszClassName = "OpenHoldemFormula";
 	wc.hIcon = AfxGetApp()->LoadIcon(IDI_ICON1);
 	RegisterClass(&wc);
-  CWinApp::InitInstance();
+	CWinApp::InitInstance();
 
- 	// Initialize OLE libraries
+	// Initialize OLE libraries
 	// Mandatory to call those initialisations. 
 	// This will also help win7/8 compatibility 
 	// those line are automatically inserted if you create a new MFC project with VS2010
@@ -108,33 +108,34 @@ BOOL COpenHoldemApp::InitInstance() {
 	if (!AfxOleInit())
 		return FALSE;
 	AfxEnableControlContainer();
-  
+
 	// Classes
-  // First we have to read the pre4ferences,
-  // as start_log() needs to know if the old log has to be deleted...
-  free((void*)m_pszProfileName);
-  m_pszProfileName = _strdup(IniFilePath().GetString());
-  Preferences()->LoadPreferences();
+	// First we have to read the pre4ferences,
+	// as start_log() needs to know if the old log has to be deleted...
+	free((void*)m_pszProfileName);
+	m_pszProfileName = _strdup(IniFilePath().GetString());
+	Preferences()->LoadPreferences();
 	if (!p_sessioncounter) p_sessioncounter = new CSessionCounter();
-	// Start logging immediatelly after the loading the preferences
-	// and initializing the sessioncounter, which is necessary for 
-	// the filename of the log (oh_0.log, etc).
-  /*fn.Format("%s\\oh%d.log", _startup_path, theApp.sessionnum);
-  struct stat file_stats = { 0 };
-  if (stat(fn.GetString(), &file_stats) == 0) {
-    unsigned long int max_file_size = 1E06 * Preferences()->log_max_logsize();
-    size_t file_size = file_stats.st_size;
-    if (file_size > max_file_size) {
-      delete_log();
-    }*/
+	// Start logging immediately after the loading the preferences
+	// and initializing the session counter, which is necessary for 
+	// the filename of the log (oh_0.log, etc.).
+	/*fn.Format("%s\\oh%d.log", _startup_path, theApp.sessionnum);
+	struct stat file_stats = { 0 };
+	if (stat(fn.GetString(), &file_stats) == 0) {
+	unsigned long int max_file_size = 1E06 * Preferences()->log_max_logsize();
+	size_t file_size = file_stats.st_size;
+	if (file_size > max_file_size) {
+	  delete_log();
+	}*/
 	start_log(p_sessioncounter->session_id(), false, LogFilePath(p_sessioncounter->session_id()).GetString()); //!!!!!
-  // ...then re-Load the preferences immediately after creation 
-  // of the log-file again, as We might want to log the preferences too,
-  // which was not yet possible some lines above.
-  // http://www.maxinmontreal.com/forums/viewtopic.php?f=124&t=20281&p=142334#p142334
-  Preferences()->LoadPreferences();
+	// ...then re-Load the preferences immediately after creation 
+	// of the log-file again, as We might want to log the preferences too,
+	// which was not yet possible some lines above.
+	// http://www.maxinmontreal.com/forums/viewtopic.php?f=124&t=20281&p=142334#p142334
+	Preferences()->LoadPreferences();
 	InstantiateAllSingletons();
-  write_log(Preferences()->debug_openholdem(), "[OpenHoldem] Going to load mouse.DLL\n");
+
+	write_log(Preferences()->debug_openholdem(), "[OpenHoldem] Going to load mouse.DLL\n");
 	// mouse.dll - failure in load is fatal
 	_mouse_dll = LoadLibrary("mouse.dll");
 	if (_mouse_dll == NULL)	{
@@ -142,19 +143,21 @@ BOOL COpenHoldemApp::InitInstance() {
 		t.Format("Unable to load mouse.dll, error: %d\n\nExiting.", GetLastError());
 		MessageBox_Error_Warning(t, "OpenHoldem mouse.dll ERROR");
 		return false;
-	}	else {
-		_dll_mouse_process_message = (mouse_process_message_t) GetProcAddress(_mouse_dll, "ProcessMessage");
-		_dll_mouse_click = (mouse_click_t) GetProcAddress(_mouse_dll, "MouseClick");
-		_dll_mouse_click_drag = (mouse_clickdrag_t) GetProcAddress(_mouse_dll, "MouseClickDrag");
-		if (_dll_mouse_process_message==NULL || _dll_mouse_click==NULL || _dll_mouse_click_drag==NULL) {
-			CString		t = "";
-			t.Format("Unable to find all symbols in mouse.dll");
-			MessageBox_Error_Warning(t, "OpenHoldem mouse.dll ERROR");
-			FreeLibrary(_mouse_dll);
-			_mouse_dll = NULL;
-			return false;
-		}
-	write_log(Preferences()->debug_openholdem(), "[OpenHoldem] Going to load keyboard.DLL\n");}
+	}
+	_dll_mouse_process_message = (mouse_process_message_t) GetProcAddress(_mouse_dll, "ProcessMessage");
+	_dll_mouse_click = (mouse_click_t) GetProcAddress(_mouse_dll, "MouseClick");
+	_dll_mouse_click_drag = (mouse_clickdrag_t) GetProcAddress(_mouse_dll, "MouseClickDrag");
+	if (_dll_mouse_process_message==NULL || _dll_mouse_click==NULL || _dll_mouse_click_drag==NULL) 
+	{
+		CString		t = "";
+		t.Format("Unable to find all symbols in mouse.dll");
+		MessageBox_Error_Warning(t, "OpenHoldem mouse.dll ERROR");
+		FreeLibrary(_mouse_dll);
+		_mouse_dll = NULL;
+		return false;
+	}
+
+	write_log(Preferences()->debug_openholdem(), "[OpenHoldem] Going to load keyboard.DLL\n");
 	// keyboard.dll - failure in load is fatal
 	_keyboard_dll = LoadLibrary("keyboard.dll");
 	if (_keyboard_dll==NULL) {
@@ -162,60 +165,60 @@ BOOL COpenHoldemApp::InitInstance() {
 		t.Format("Unable to load keyboard.dll, error: %d\n\nExiting.", GetLastError());
 		MessageBox_Error_Warning(t, "OpenHoldem keyboard.dll ERROR");
 		return false;
-	}	else {
-		_dll_keyboard_process_message = (keyboard_process_message_t) GetProcAddress(_keyboard_dll, "ProcessMessage");
-		_dll_keyboard_sendstring = (keyboard_sendstring_t) GetProcAddress(_keyboard_dll, "SendString");
-		_dll_keyboard_sendkey = (keyboard_sendkey_t) GetProcAddress(_keyboard_dll, "SendKey");
-		if (_dll_keyboard_process_message==NULL || _dll_keyboard_sendstring==NULL || _dll_keyboard_sendkey==NULL)	{
-			CString		t = "";
-			t.Format("Unable to find all symbols in keyboard.dll");
-			MessageBox_Error_Warning(t, "OpenHoldem keyboard.dll ERROR");
-			FreeLibrary(_keyboard_dll);
-			_keyboard_dll = NULL;
-			return false;
-		}
 	}
+	_dll_keyboard_process_message = (keyboard_process_message_t) GetProcAddress(_keyboard_dll, "ProcessMessage");
+	_dll_keyboard_sendstring = (keyboard_sendstring_t) GetProcAddress(_keyboard_dll, "SendString");
+	_dll_keyboard_sendkey = (keyboard_sendkey_t) GetProcAddress(_keyboard_dll, "SendKey");
+	if (_dll_keyboard_process_message== nullptr || _dll_keyboard_sendstring==NULL || _dll_keyboard_sendkey==NULL)	
+	{
+		CString		t = "";
+		t.Format("Unable to find all symbols in keyboard.dll");
+		MessageBox_Error_Warning(t, "OpenHoldem keyboard.dll ERROR");
+		FreeLibrary(_keyboard_dll);
+		_keyboard_dll = NULL;
+		return false;
+	}
+
 	LoadLastRecentlyUsedFileList();
 	// Register the application's document templates.  Document templates
 	// serve as the connection between documents, frame windows and views
-	CSingleDocTemplate* pDocTemplate;
 	// Document template and doc/view
-  // https://msdn.microsoft.com/en-us/library/hts9a4xz.aspx
+	// https://msdn.microsoft.com/en-us/library/hts9a4xz.aspx
 	// https://msdn.microsoft.com/en-us/library/d1e9fe7d.aspx
 	write_log(Preferences()->debug_openholdem(), "[OpenHoldem] Going to create CSingleDocTemplate()\n");
-	pDocTemplate = new CSingleDocTemplate(
+	const auto p_doc_template = new CSingleDocTemplate(
 		IDR_MAINFRAME,
 		RUNTIME_CLASS(COpenHoldemDoc),
-		RUNTIME_CLASS(CMainFrame),	   // main SDI frame window
+		RUNTIME_CLASS(CMainFrame), // main SDI frame window
 		RUNTIME_CLASS(COpenHoldemView));
-	if (!pDocTemplate) {
+	if (!p_doc_template) 
+	{
 		write_log(Preferences()->debug_openholdem(), "[OpenHoldem] Creating CSingleDocTemplate() failed\n");
 		return FALSE;
 	}
 	write_log(Preferences()->debug_openholdem(), "[OpenHoldem] Going to AddDocTemplate()\n");
-	AddDocTemplate(pDocTemplate);
+	AddDocTemplate(p_doc_template);
 
 	write_log(Preferences()->debug_openholdem(), "[OpenHoldem] Going to EnableShellOpen()\n");
 	EnableShellOpen();
 	write_log(Preferences()->debug_openholdem(), "[OpenHoldem] Going to RegisterShellFileTypes(false)\n");
 	RegisterShellFileTypes(false);
-  write_log(Preferences()->debug_openholdem(), "[OpenHoldem] Going to InitializeThreads()\n");
-  InitializeThreads();
-  write_log(Preferences()->debug_openholdem(), "[OpenHoldem] Going to OpenLastRecentlyUsedFile()\n");
-  p_formula_parser->ParseDefaultLibraries(); 
+	write_log(Preferences()->debug_openholdem(), "[OpenHoldem] Going to InitializeThreads()\n");
+	InitializeThreads();
+	write_log(Preferences()->debug_openholdem(), "[OpenHoldem] Going to OpenLastRecentlyUsedFile()\n");
+	p_formula_parser->ParseDefaultLibraries(); 
 	OpenLastRecentlyUsedFile();
-	write_log(Preferences()->debug_openholdem(), "[OpenHoldem] m_pMainWnd = %i\n",
-		m_pMainWnd);
+	write_log(Preferences()->debug_openholdem(), "[OpenHoldem] m_pMainWnd = %i\n", m_pMainWnd);
 	write_log(Preferences()->debug_openholdem(), "[OpenHoldem] Posting message that finishes initialization later\n");
 	FinishInitialization();
 	write_log(Preferences()->debug_openholdem(), "[OpenHoldem] InitInstance done\n");
 	return TRUE;
 }
 
-void COpenHoldemApp::FinishInitialization() {
+void COpenHoldemApp::FinishInitialization()
+{
 	write_log(Preferences()->debug_openholdem(), "[OpenHoldem] FinishInitialization()\n");
-	write_log(Preferences()->debug_openholdem(), "[OpenHoldem] m_pMainWnd = %i\n",
-		m_pMainWnd);
+	write_log(Preferences()->debug_openholdem(), "[OpenHoldem] m_pMainWnd = %i\n", m_pMainWnd);
 	assert(p_openholdem_title != NULL);
 	p_openholdem_title->UpdateTitle();
 	// The one and only window has been initialized, so show and update it
@@ -236,13 +239,14 @@ void COpenHoldemApp::FinishInitialization() {
 	m_pMainWnd->SetForegroundWindow();
 }
 
-int COpenHoldemApp::ExitInstance() {
-  // timers and threads are already stopped 
-  // by CMainFrame::DestroyWindow().
-  // Now we cancontinue with singletons.
+int COpenHoldemApp::ExitInstance()
+{
+	// timers and threads are already stopped 
+	// by CMainFrame::DestroyWindow().
+	// Now we can continue with singletons.
 	DeleteAllSingletons();
 	Scintilla_ReleaseResources();
-  stop_log();
+	stop_log();
 	return CWinApp::ExitInstance();
 }
 
