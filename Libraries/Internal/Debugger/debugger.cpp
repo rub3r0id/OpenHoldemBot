@@ -16,7 +16,7 @@
 // https://vld.codeplex.com/
 // needs to be included at the very beginning
 // http://www.maxinmontreal.com/forums/viewtopic.php?f=338&t=22351
-#include <vld.h>
+//#include <vld.h>
 // Check a new version at https://github.com/Azure/vld/releases/
 //  or use OpenHoldemBot\Other\Distributives\VisualLeakDetector
 // Install it
