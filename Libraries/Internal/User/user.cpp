@@ -19,7 +19,7 @@
 #include <conio.h>
 #include <windows.h>
 #include "OpenHoldemFunctions.h"
-
+#include "opython.h"
 //******************************************************************************
 //
 // Place all your initializations in the functions below
@@ -41,12 +41,14 @@ void __stdcall DLLUpdateOnConnection() {
 }
 
 void __stdcall DLLUpdateOnHandreset() {
+  pyResetDatas();
 }
 
 void __stdcall DLLUpdateOnNewRound() {
 }
 
 void __stdcall DLLUpdateOnMyTurn() {
+  pyTableDatas();
 }
 
 void __stdcall DLLUpdateOnHeartbeat() {
@@ -69,6 +71,11 @@ double __stdcall ProcessQuery(const char* pquery) {
 	  WriteLog("%s %f\n", question, answer);
     return GetSymbol("random");
   }
+  if (strncmp(pquery, "dll$decision", 13) == 0) {
+		double ret = pyDecision();
+		WriteLog("pyDecision: %f\n", ret);
+		return ret;
+	}
   if (strncmp(pquery, "dll$scrape", 11) == 0) {
     char* scraped_result;
     int result_lenght;
@@ -98,14 +105,14 @@ BOOL APIENTRY DllMain(HANDLE hModule, DWORD ul_reason_for_call, LPVOID lpReserve
 			AllocConsole();
 #endif _DEBUG
 			InitializeOpenHoldemFunctionInterface();
-      DLLOnLoad();
+			pyInit();
 			break;
 		case DLL_THREAD_ATTACH:
 			break;
 		case DLL_THREAD_DETACH:
 			break;
 		case DLL_PROCESS_DETACH:
-      DLLOnUnLoad();
+			pyDestroy();
 #ifdef _DEBUG
 			FreeConsole();
 #endif _DEBUG
